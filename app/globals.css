@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0e1411;
+  
+  --primary: #1B4D3E;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #F27052;
+  --secondary-foreground: #ffffff;
+  
+  --accent: #5c6f67;
+  --accent-foreground: #ffffff;
+  
+  --muted: #f3f6f4;
+  --muted-foreground: #5c6f67;
+  
+  --card: #ffffff;
+  --card-foreground: #0e1411;
+  
+  --border: #e2e8e5;
+  
+  --font-raleway: var(--font-raleway);
+  --font-poppins: var(--font-poppins);
+}
+
+.dark {
+  --background: #080d0a;
+  --foreground: #f3f6f4;
+  
+  --primary: #276a55;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #ff8a6f;
+  --secondary-foreground: #ffffff;
+  
+  --accent: #8ba096;
+  --accent-foreground: #080d0a;
+  
+  --muted: #0e1612;
+  --muted-foreground: #8ba096;
+  
+  --card: #0c1410;
+  --card-foreground: #f3f6f4;
+  
+  --border: #1b2621;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  
+  --font-sans: var(--font-raleway), sans-serif;
+  --font-heading: var(--font-poppins), sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 750;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glassmorphism-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom CSS Marquee Animation for Clients Logos */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  gap: 3rem;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
