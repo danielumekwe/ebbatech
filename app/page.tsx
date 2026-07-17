@@ -51,34 +51,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. WHO WE ARE */}
+      {/* 3. WELCOME NOTE */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center space-y-5">
-          <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
-            Who We Are
-          </span>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-            Ebbatech Nigeria Limited is one of the leading companies in the storage systems market — a provider of industrial storage and shelving, expertly designed and engineered to enable businesses to increase capacity, productivity and efficiency. We specialise in the design, manufacturing, sales and servicing of metal racking, mobile archive systems and other storage solutions.
-          </p>
-          <Link
-            href="/about"
-            className="text-xs font-bold text-[#1B4D3E] dark:text-[#ff8a6f] hover:underline inline-flex items-center gap-1.5"
-          >
-            More about us <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Column 1: Summary */}
+          <div className="lg:col-span-6 space-y-6">
+            <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
+              Welcome to Ebbatech
+            </span>
+            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
+              Who We Are
+            </h2>
+            <div className="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+              <p>
+                Ebbatech Nigeria Limited is one of the leading companies in the storage systems market, providing industrial storage and shelving that is expertly designed and engineered to enable businesses to increase capacity, productivity and efficiency.
+              </p>
+              <p>
+                We specialise in the design, manufacturing, sales and servicing of metal racking, mobile archive systems and other storage solutions &mdash; making us a genuine one-stop shop for storage.
+              </p>
+              <p>
+                We have helped some of Nigeria&apos;s leading brands and pioneering SMEs, providing them with access to global expertise and support, from initial planning through to installation and on-going service and support.
+              </p>
+            </div>
+            <Link
+              href="/about"
+              className="text-xs font-bold text-[#1B4D3E] dark:text-[#ff8a6f] hover:underline inline-flex items-center gap-1.5"
+            >
+              More about us <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* Column 2: Image */}
+          <div
+            className="lg:col-span-6 h-80 sm:h-96 rounded-3xl bg-cover bg-center border border-slate-200 dark:border-slate-800 shadow-sm"
+            style={{ backgroundImage: `url('/images/hero_warehouse.png')` }}
+          />
         </div>
       </section>
 
-      {/* 4. PRODUCTS PREVIEW */}
+      {/* 4. OUR SOLUTIONS */}
       <section className="bg-slate-50 dark:bg-[#0a0f0d] py-20 border-y border-slate-100 dark:border-slate-900">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12 border-l-4 border-[#F27052] pl-4">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">
+          <div className="mb-12 max-w-2xl">
+            <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block mb-2">
               Ebbatech Range
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white">
-              Built for Every Kind of Space
+            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">
+              Our Solutions
             </h2>
+            <p className="text-sm text-slate-555 dark:text-slate-400 font-light leading-relaxed">
+              From heavy duty warehouse racking to high-density mobile shelving, our systems are engineered around your facility &mdash; not off a generic shelf.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
