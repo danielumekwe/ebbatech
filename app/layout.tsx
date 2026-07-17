@@ -6,7 +6,6 @@ import { Providers } from "@/components/providers";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import FloatActions from "@/components/float-actions";
-import QuoteSticky from "@/components/quote-sticky";
 import CookieConsent from "@/components/cookie-consent";
 
 const raleway = Raleway({
@@ -22,8 +21,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ebbatech Nigeria Limited | Industrial Warehouse Racking & Mobile Compactors",
-  description: "Nigeria's leading provider of SEMA-compliant heavy-duty selective pallet racking, mobile archive compactors, longspan shelving, and spatial CAD warehouse audits.",
+  title: "Ebbatech Nigeria | Industrial Storage, Racking & Shelving Solutions",
+  description: "Ebbatech Nigeria Limited designs, manufactures and installs industrial racking, shelving and mobile storage systems. A one-stop shop for storage solutions in Lagos and across Nigeria.",
   metadataBase: new URL("https://www.ebbatech.com.ng"),
 };
 
@@ -42,7 +41,6 @@ export default function RootLayout({
           </main>
           <Footer />
           <FloatActions />
-          <QuoteSticky />
           <CookieConsent />
         </Providers>
       </body>

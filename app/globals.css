@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Custom CSS Marquee Animation for Clients Logos */
+/* Auto-scrolling Marquee Animation for Client Logos */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 .animate-infinite-scroll {
   display: flex;
   width: max-content;
-  gap: 3rem;
+  gap: 2.5rem;
   animation: marquee 35s linear infinite;
 }
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Ebbatech Nigeria Limited",
-  description: "How Ebbatech Nigeria Limited collects, uses, and protects B2B data gathered during site surveys, CAD design requests, and quote submissions.",
+  description: "How Ebbatech Nigeria Limited collects, uses, and protects data submitted through our enquiry form and consultation requests.",
 };
 
 export default function PrivacyPage() {
@@ -13,17 +13,17 @@ export default function PrivacyPage() {
         <p className="text-slate-500">Last updated: July 15, 2026</p>
         
         <p>
-          Ebbatech Nigeria Limited is committed to protecting your corporate and personal privacy. This Privacy Policy explains what B2B datasets we collect during site surveys, CAD design requests, and quote submissions, and how we handle them.
+          Ebbatech Nigeria Limited is committed to protecting your corporate and personal privacy. This Privacy Policy explains what data we collect through our Enquiry Form and other direct contact with our sales team, and how we handle it.
         </p>
-        
+
         <h3 className="font-bold text-sm text-slate-950 dark:text-white">Information We Collect</h3>
         <p>
-          When you request a quotation or consultation, we collect company names, emails, direct telephone hotlines, installation locations, and warehouse spatial metrics (such as ceiling heights, dimensions, and SKU details).
+          When you submit an enquiry, we collect your full name, company name, email address, phone number, enquiry type, facility location, and any project details you provide.
         </p>
 
         <h3 className="font-bold text-sm text-slate-950 dark:text-white">Use of Data</h3>
         <p>
-          Your layout specifications and dimensions are used exclusively to draft structural proposals, calculate load capacities, design 2D/3D CAD plans, and coordinate operations. We do not sell or lease corporate information to third parties.
+          Your information is used exclusively to respond to your enquiry, prepare quotations, and coordinate consultations, installations or facility reviews. We do not sell or lease corporate information to third parties.
         </p>
 
         <h3 className="font-bold text-sm text-slate-950 dark:text-white">Security Controls</h3>

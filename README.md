@@ -14,7 +14,11 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Forms
 
-The contact, quote, and downloads pages fall back to `mailto:` links since there is no backend or email service configured. To wire up real submissions (e.g. via an API route + an email provider), add the integration and replace the `mailto:` handlers in `components/contact-form.tsx`, `components/quote-form.tsx`, and `components/downloads-grid.tsx`.
+The Enquiry Form on `/contact` falls back to a `mailto:` link since there is no backend or email service configured. To wire up real submissions (e.g. via an API route + an email provider), add the integration and replace the `mailto:` handler in `components/contact-form.tsx`.
+
+## Content
+
+Site copy is sourced from `ebbatech-website-content.md` (the Ebbatech Company Profile). Update that document first, then apply changes to the corresponding page/data files so the two stay in sync.
 
 ## Deploy on Vercel
 

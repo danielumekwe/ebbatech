@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { productCategories } from "@/lib/data/products";
 
 interface Slide {
   image: string;
@@ -15,52 +16,23 @@ interface Slide {
 const slides: Slide[] = [
   {
     image: "/images/hero_warehouse.png",
-    badge: "SGS & SEMA Compliant Racking Systems",
+    badge: "Storage, Racking & Shelving Solutions",
     heading: (
       <>
-        Space, Safety and Innovation <br />
-        <span className="text-[#F27052]">for Your Warehouse</span>
+        Nigeria&apos;s One-Stop Shop <br />
+        <span className="text-[#F27052]">for Storage Solutions</span>
       </>
     ),
-    description: "High-density industrial steel racks engineered to double pallet capacity, with full turnkey delivery from laser-level alignment to floor anchoring in compliance with SEMA guidelines.",
-    cta: { label: "Request Technical Audit", href: "/quote" }
+    description: "Ebbatech is the leading storage, material handling and space-making company of choice — designing, manufacturing and installing industrial storage that helps your business do more with the space you already have.",
+    cta: { label: "Get a Free Quote", href: "/contact" }
   },
-  {
-    image: "/images/mobile_shelving.png",
-    badge: "High-Density Mobile Archive Compactors",
-    heading: (
-      <>
-        Reclaim Up to 85% <br />
-        <span className="text-[#F27052]">of Your Registry Floor Space</span>
-      </>
-    ),
-    description: "Mechanical hand-crank compactors consolidate static aisles into a single mobile lane for banks, hospitals, and registries, with centralized locking and anti-tilt safety rails protecting sensitive records.",
-    cta: { label: "Request Technical Audit", href: "/quote?product=mobile-archive-shelving" }
-  },
-  {
-    image: "/images/shelving_system.png",
-    badge: "Medium-Duty Industrial Shelving",
-    heading: (
-      <>
-        Built for Fast, <br />
-        <span className="text-[#F27052]">Manual Picking Operations</span>
-      </>
-    ),
-    description: "Longspan steel shelving carrying up to 800 kg per level, adjustable on a 50mm pitch and boltless to assemble, optimized for retail backrooms, e-commerce fulfillment, and office box archiving.",
-    cta: { label: "Request Technical Audit", href: "/quote?product=long-span-shelving" }
-  },
-  {
-    image: "/images/research_collaboration.png",
-    badge: "CAD Layout & Structural Safety Audits",
-    heading: (
-      <>
-        Engineered Layouts, <br />
-        <span className="text-[#F27052]">Backed by Site Data</span>
-      </>
-    ),
-    description: "3D laser site surveys and load calculations turned into precise CAD warehouse layouts, backed by certified inspectors who verify upright plumb-lines, anchoring, and beam locking pins across your facility.",
-    cta: { label: "Schedule a Consultation", href: "/contact" }
-  }
+  ...productCategories.map((cat) => ({
+    image: cat.image,
+    badge: cat.name,
+    heading: <>{cat.name}</>,
+    description: cat.description,
+    cta: { label: cat.ctaLabel, href: `/contact?type=${encodeURIComponent(cat.name)}` }
+  }))
 ];
 
 const AUTOPLAY_MS = 7000;
@@ -111,13 +83,21 @@ export default function HeroSlider() {
                 {slide.description}
               </p>
 
-              <div className="pt-2 sm:pt-4">
+              <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row gap-4">
                 <Link
                   href={slide.cta.href}
                   className="inline-block bg-[#F27052] hover:bg-[#ff8a6f] text-white text-sm sm:text-base font-bold px-8 sm:px-10 py-4 rounded-xl transition-all text-center shadow-lg shadow-black/20"
                 >
                   {slide.cta.label}
                 </Link>
+                {idx === 0 && (
+                  <Link
+                    href="/products"
+                    className="inline-block bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white text-sm sm:text-base font-bold px-8 sm:px-10 py-4 rounded-xl transition-all text-center"
+                  >
+                    Explore Our Products
+                  </Link>
+                )}
               </div>
             </div>
           </div>

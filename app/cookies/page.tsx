@@ -13,17 +13,17 @@ export default function CookiesPage() {
         <p className="text-slate-500">Last updated: July 15, 2026</p>
         
         <p>
-          This Cookie Policy explains how Ebbatech Nigeria Limited uses browser cookies and tracking tags to optimize B2B portal operations, store layout wizards, and remember preferences.
+          This Cookie Policy explains how Ebbatech Nigeria Limited uses browser cookies to remember your preferences and understand how visitors use our website.
         </p>
 
         <h3 className="font-bold text-sm text-slate-950 dark:text-white">Types of Cookies Used</h3>
         <p>
-          We use essential cookies to maintain quotation progress in the RFQ wizard, and preference cookies to save dark theme preferences. We also track PDF downloads (such as catalog brochures) anonymously for site optimization.
+          We use essential cookies to remember your cookie consent choice, and preference cookies to save your light/dark theme selection between visits.
         </p>
 
         <h3 className="font-bold text-sm text-slate-950 dark:text-white">Adjusting Preferences</h3>
         <p>
-          You can disable cookies in your browser settings. However, doing so may affect interactive features (such as comparison selections or RFQ steps).
+          You can disable cookies in your browser settings at any time. Doing so may affect minor interface preferences but will not prevent you from browsing the site or submitting an enquiry.
         </p>
       </div>
     </div>

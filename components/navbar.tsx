@@ -30,7 +30,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Navigation Items (Desktop) - EXACT ORDER */}
+        {/* Navigation Items (Desktop) */}
         <div className="hidden lg:flex items-center gap-6 text-[10px] xl:text-xs font-bold uppercase tracking-wider text-slate-650 dark:text-slate-300">
           <Link href="/" className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors">
             HOME
@@ -39,23 +39,17 @@ export default function Navbar() {
             ABOUT US
           </Link>
           <Link href="/services" className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors whitespace-nowrap">
-            OUR SERVICES
+            SERVICES
           </Link>
-          
-          {/* OUR PRODUCTS (Mega Dropdown Menu) */}
+
+          {/* PRODUCTS (Mega Dropdown Menu) */}
           <MegaMenu />
 
           <Link href="/clients" className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors whitespace-nowrap">
-            OUR CLIENTS
-          </Link>
-          <Link href="/projects" className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors">
-            PORTFOLIO
-          </Link>
-          <Link href="/blog" className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors">
-            BLOG
+            CLIENTS
           </Link>
           <Link href="/contact" className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors whitespace-nowrap">
-            CONTACT US
+            CONTACT
           </Link>
         </div>
 
@@ -63,7 +57,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <ThemeToggle />
           <Link
-            href="/quote"
+            href="/contact"
             className="bg-[#F27052] hover:bg-[#ff8a6f] text-white text-[10px] xl:text-xs font-bold px-5 py-3 rounded-xl flex items-center gap-1.5 transition-colors shadow-sm whitespace-nowrap"
           >
             REQUEST A QUOTE <ArrowRight className="w-3.5 h-3.5" />
@@ -93,25 +87,19 @@ export default function Navbar() {
             ABOUT US
           </Link>
           <Link href="/services" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors pb-3 border-b border-slate-100 dark:border-slate-855">
-            OUR SERVICES
+            SERVICES
           </Link>
           <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors pb-3 border-b border-slate-100 dark:border-slate-855">
-            OUR PRODUCTS
+            PRODUCTS
           </Link>
           <Link href="/clients" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors pb-3 border-b border-slate-100 dark:border-slate-855">
-            OUR CLIENTS
-          </Link>
-          <Link href="/projects" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors pb-3 border-b border-slate-100 dark:border-slate-855">
-            PORTFOLIO
-          </Link>
-          <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors pb-3 border-b border-slate-100 dark:border-slate-855">
-            BLOG
+            CLIENTS
           </Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] dark:hover:text-[#ff8a6f] transition-colors pb-3 border-b border-slate-100 dark:border-slate-855">
-            CONTACT US
+            CONTACT
           </Link>
           <Link
-            href="/quote"
+            href="/contact"
             onClick={() => setIsOpen(false)}
             className="bg-[#F27052] text-white text-center py-3.5 rounded-xl transition-all shadow-md"
           >
