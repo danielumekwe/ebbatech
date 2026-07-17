@@ -9,6 +9,8 @@ export const productCategories: ProductCategory[] = [
     description: "Racking systems built to carry serious load and keep high-volume operations moving.",
     items: [
       "Multi-tier pallet racking",
+      "Adjustable Pallet Racking",
+      "Pallet Flow Racking",
       "Pallet Shuttle System",
       "Drive-in Racking",
       "Pallet Racking",
@@ -28,6 +30,7 @@ export const productCategories: ProductCategory[] = [
       "Multi-tier shelving",
       "Medium shelving",
       "Slotted angle shelving",
+      "Bolted Angle Shelving",
       "Economic shelving",
       "Library shelves",
       "Mobile archive shelving",
@@ -53,6 +56,9 @@ export const productCategories: ProductCategory[] = [
     name: "Mobile Shelving",
     previewDescription: "High-density storage that gives you back your floor space.",
     description: "Mobile shelving systems have become one of the most essential high-density storage systems, especially where there isn't a lot of available floor space. This system could not only save you money, it can also free up floor space for either more storage capacity or personnel space. As your business grows, the mobile system can grow with you, making your office environment more productive without taking on more expensive floor space. Our clients here in Nigeria include banks, government agencies, data centres, oil and gas companies, multinational companies, records and archiving operations and more. For these clients the storage of files and products needs to be maximised in the given area — this is where a mobile storage system will work.",
+    items: [
+      "High Density Filing Systems"
+    ],
     bestFor: [
       "Records and archiving",
       "Data centres",

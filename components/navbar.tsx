@@ -2,13 +2,15 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import MegaMenu from "./mega-menu";
 import TopBar from "./top-bar";
 import { ThemeToggle } from "./theme-toggle";
+import { productCategories } from "@/lib/data/products";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   return (
     <div className="sticky top-0 z-40">
@@ -92,9 +94,43 @@ export default function Navbar() {
             <Link href="/services" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
               SERVICES
             </Link>
-            <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              PRODUCTS
-            </Link>
+            <div className="border-b border-slate-100 pb-3">
+              <button
+                onClick={() => setIsProductsOpen(!isProductsOpen)}
+                className="w-full flex items-center justify-between hover:text-[#1B4D3E] transition-colors"
+                aria-expanded={isProductsOpen}
+              >
+                PRODUCTS
+                <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
+              </button>
+              {isProductsOpen && (
+                <div className="mt-3 flex flex-col gap-3 pl-3 border-l-2 border-slate-100 normal-case font-semibold text-[11px] tracking-normal">
+                  {productCategories.map((cat) => (
+                    <Link
+                      key={cat.slug}
+                      href={`/products#${cat.slug}`}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsProductsOpen(false);
+                      }}
+                      className="hover:text-[#1B4D3E] transition-colors"
+                    >
+                      {cat.name}
+                    </Link>
+                  ))}
+                  <Link
+                    href="/products"
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsProductsOpen(false);
+                    }}
+                    className="text-[#1B4D3E] hover:text-[#F27052] transition-colors"
+                  >
+                    View All Products &rarr;
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link href="/clients" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
               CLIENTS
             </Link>
