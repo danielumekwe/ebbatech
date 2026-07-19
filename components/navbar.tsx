@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import MegaMenu from "./mega-menu";
 import TopBar from "./top-bar";
-import { ThemeToggle } from "./theme-toggle";
 import { productCategories } from "@/lib/data/products";
 
 export default function Navbar() {
@@ -63,7 +62,6 @@ export default function Navbar() {
 
           {/* Action CTAs (Desktop) */}
           <div className="hidden lg:flex items-center gap-4">
-            <ThemeToggle />
             <Link
               href="/contact"
               className="bg-[#F27052] hover:bg-[#1B4D3E] text-white text-[10px] xl:text-xs font-bold px-5 py-3 rounded-xl flex items-center gap-1.5 transition-colors shadow-sm whitespace-nowrap"
@@ -74,7 +72,6 @@ export default function Navbar() {
 
           {/* Hamburger Trigger (Mobile) */}
           <div className="flex items-center gap-4 lg:hidden">
-            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-[#F27052] cursor-pointer"

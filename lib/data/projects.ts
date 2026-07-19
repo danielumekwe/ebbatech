@@ -51,7 +51,3 @@ export const projects: Project[] = [
     image: "/photos/eb13.jpeg"
   }
 ];
-
-export const projectsCta = {
-  image: "/photos/eb14.jpeg"
-};

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { projects, projectsCta } from "@/lib/data/projects";
+import CtaBanner from "@/components/cta-banner";
+import { projects } from "@/lib/data/projects";
 
 export const metadata: Metadata = {
   title: "Our Projects | Ebbatech Nigeria Limited",
@@ -60,24 +59,12 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA Banner */}
-      <section data-reveal className="pb-20 max-w-3xl mx-auto px-6">
-        <div className="rounded-3xl overflow-hidden border border-slate-150 dark:border-slate-800 shadow-sm">
-          <Image
-            src={projectsCta.image}
-            alt="Ready to take your warehouse to the next level? Let's get started with Ebbatech."
-            width={864}
-            height={1080}
-            className="w-full h-auto object-cover"
-          />
-        </div>
-        <div className="text-center pt-8">
-          <Link
-            href="/contact"
-            className="bg-[#1B4D3E] hover:bg-[#276a55] text-white text-xs font-bold px-8 py-3.5 rounded-xl transition-all shadow-sm inline-flex items-center gap-1.5"
-          >
-            Start your project <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
+      <section className="pb-20 max-w-5xl mx-auto px-6">
+        <CtaBanner
+          image="/photos/eb5.jpeg"
+          title="Ready to take your warehouse to the next level?"
+          subtitle="Tell us about your project and we'll come back with a solution and a quotation."
+        />
       </section>
     </div>
   );

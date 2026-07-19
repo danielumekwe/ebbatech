@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Handshake, ArrowRight } from "lucide-react";
 import ClientLogoWall from "@/components/client-logo-wall";
+import CtaBanner from "@/components/cta-banner";
 import { sectorsServed } from "@/lib/data/clients";
 
 export const metadata: Metadata = {
@@ -61,18 +60,13 @@ export default function ClientsPage() {
       </section>
 
       {/* CTA */}
-      <section data-reveal className="py-12">
-        <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
-          <Handshake className="w-8 h-8 text-[#F27052] mx-auto" />
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="bg-[#1B4D3E] hover:bg-[#276a55] text-white text-xs font-bold px-6 py-3.5 rounded-xl transition-all shadow-sm inline-flex items-center gap-1.5"
-            >
-              Join them &mdash; start a conversation <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        </div>
+      <section className="py-20 max-w-5xl mx-auto px-6">
+        <CtaBanner
+          image="/photos/eb10.jpeg"
+          title="Join Nigeria's leading brands"
+          subtitle="Every year we help scores of companies become more efficient and more productive. Let's talk about your space."
+          buttonLabel="Request a Quote"
+        />
       </section>
     </div>
   );

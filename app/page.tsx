@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Compass, Layers, TrendingUp, ArrowRight } from "lucide-react";
 import HeroSlider from "@/components/hero-slider";
 import ClientLogoMarquee from "@/components/client-logo-marquee";
+import CtaBanner from "@/components/cta-banner";
 import { productCategories } from "@/lib/data/products";
 import { services } from "@/lib/data/services";
 
@@ -199,22 +200,11 @@ export default function HomePage() {
 
       {/* 7. CLOSING CTA */}
       <section className="py-20 max-w-5xl mx-auto px-6">
-        <div data-reveal className="bg-[#1B4D3E] text-white rounded-3xl p-10 md:p-14 text-center space-y-5 shadow-md">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Ready to reclaim your space?
-          </h2>
-          <p className="text-sm text-slate-300 font-light max-w-lg mx-auto leading-relaxed">
-            Tell us about your warehouse, office or archive and we&apos;ll come back with a solution and a quotation.
-          </p>
-          <div className="pt-2">
-            <Link
-              href="/contact"
-              className="bg-[#F27052] hover:bg-[#ff8a6f] text-white text-sm font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg inline-flex items-center gap-1.5"
-            >
-              Contact Us Today <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
+        <CtaBanner
+          image="/photos/eb7.jpeg"
+          title="Ready to reclaim your space?"
+          subtitle="Tell us about your warehouse, office or archive and we'll come back with a solution and a quotation."
+        />
       </section>
     </div>
   );

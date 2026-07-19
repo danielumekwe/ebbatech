@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Layers, Globe2, Factory, Building2 } from "lucide-react";
+import CtaBanner from "@/components/cta-banner";
 
 export const metadata: Metadata = {
   title: "About Ebbatech | Leading Storage Systems Company in Nigeria",
@@ -70,7 +70,7 @@ export default function AboutPage() {
           data-reveal
           data-reveal-delay={120}
           className="lg:col-span-6 h-96 rounded-3xl bg-cover bg-center border border-slate-200 dark:border-slate-800 shadow-sm"
-          style={{ backgroundImage: `url('/images/research_collaboration.png')` }}
+          style={{ backgroundImage: `url('/photos/eb3.jpeg')` }}
         />
       </section>
 
@@ -120,15 +120,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section data-reveal className="py-20 text-center space-y-6 max-w-3xl mx-auto px-6">
-        <div className="pt-2">
-          <Link
-            href="/contact"
-            className="bg-[#F27052] hover:bg-[#ff8a6f] text-white text-xs font-bold px-8 py-3.5 rounded-xl transition-all shadow-md"
-          >
-            Talk to our team
-          </Link>
-        </div>
+      <section className="py-20 max-w-5xl mx-auto px-6">
+        <CtaBanner
+          image="/photos/eb6.jpeg"
+          title="Let's talk about your space"
+          subtitle="Whatever stage you're at, our team is ready to help you plan, design and install the right storage solution."
+        />
       </section>
     </div>
   );
