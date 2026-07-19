@@ -50,6 +50,9 @@ export default function Navbar() {
             {/* PRODUCTS (Mega Dropdown Menu) */}
             <MegaMenu />
 
+            <Link href="/projects" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
+              PROJECTS
+            </Link>
             <Link href="/clients" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
               CLIENTS
             </Link>
@@ -131,6 +134,9 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            <Link href="/projects" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
+              PROJECTS
+            </Link>
             <Link href="/clients" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
               CLIENTS
             </Link>

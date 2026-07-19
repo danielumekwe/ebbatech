@@ -35,7 +35,7 @@ export default function AboutPage() {
     <div className="bg-white dark:bg-[#080d0a] text-slate-900 dark:text-slate-100 min-h-screen">
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
-        <div className="max-w-7xl mx-auto px-6 space-y-4 text-center">
+        <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             About Ebbatech
           </span>
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-6 space-y-6">
+        <div data-reveal className="lg:col-span-6 space-y-6">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Our Story
           </span>
@@ -67,6 +67,8 @@ export default function AboutPage() {
           </div>
         </div>
         <div
+          data-reveal
+          data-reveal-delay={120}
           className="lg:col-span-6 h-96 rounded-3xl bg-cover bg-center border border-slate-200 dark:border-slate-800 shadow-sm"
           style={{ backgroundImage: `url('/images/research_collaboration.png')` }}
         />
@@ -74,7 +76,7 @@ export default function AboutPage() {
 
       {/* Our Mission */}
       <section id="mission" className="bg-slate-50 dark:bg-[#0a0f0d] py-20 border-y border-slate-100 dark:border-slate-900 scroll-mt-24">
-        <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
+        <div data-reveal className="max-w-3xl mx-auto px-6 text-center space-y-4">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Our Mission
           </span>
@@ -86,7 +88,7 @@ export default function AboutPage() {
 
       {/* What Sets Us Apart */}
       <section className="py-20 max-w-7xl mx-auto px-6 space-y-12">
-        <div className="text-center space-y-3 max-w-lg mx-auto">
+        <div data-reveal className="text-center space-y-3 max-w-lg mx-auto">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             What Sets Us Apart
           </span>
@@ -96,9 +98,11 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {differentiators.map((item) => (
+          {differentiators.map((item, idx) => (
             <div
               key={item.title}
+              data-reveal
+              data-reveal-delay={(idx % 4) * 100}
               className="bg-slate-50 dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 p-8 rounded-3xl shadow-sm space-y-4"
             >
               <div className="w-12 h-12 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center border border-slate-100 dark:border-slate-800">
@@ -116,7 +120,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 text-center space-y-6 max-w-3xl mx-auto px-6">
+      <section data-reveal className="py-20 text-center space-y-6 max-w-3xl mx-auto px-6">
         <div className="pt-2">
           <Link
             href="/contact"

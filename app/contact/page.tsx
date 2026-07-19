@@ -13,7 +13,7 @@ export default function ContactPage() {
     <div className="bg-white dark:bg-[#080d0a] text-slate-900 dark:text-slate-100 min-h-screen">
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
-        <div className="max-w-7xl mx-auto px-6 space-y-4 text-center">
+        <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Get In Touch
           </span>
@@ -30,7 +30,7 @@ export default function ContactPage() {
       <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
 
         {/* Left Side: Contact Details */}
-        <div className="lg:col-span-5 bg-slate-50 dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 rounded-3xl p-8 flex flex-col justify-between space-y-8 shadow-sm">
+        <div data-reveal className="lg:col-span-5 bg-slate-50 dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 rounded-3xl p-8 flex flex-col justify-between space-y-8 shadow-sm">
           <div className="space-y-6">
             <h2 className="text-2xl font-extrabold text-[#1B4D3E] dark:text-[#ff8a6f]">
               Contact Details
@@ -72,7 +72,7 @@ export default function ContactPage() {
         </div>
 
         {/* Right Side: Enquiry Form */}
-        <div className="lg:col-span-7 bg-[#1B4D3E] text-white rounded-3xl p-8 md:p-10 shadow-lg flex flex-col justify-center">
+        <div data-reveal data-reveal-delay={120} className="lg:col-span-7 bg-[#1B4D3E] text-white rounded-3xl p-8 md:p-10 shadow-lg flex flex-col justify-center">
           <h2 className="text-2xl font-extrabold text-white mb-2">
             Enquiry Form
           </h2>

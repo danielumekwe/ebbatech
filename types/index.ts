@@ -16,5 +16,14 @@ export interface Service {
   name: string;
   body: string[];
   bullets?: string[];
+  images: string[];
   ctaLabel: string;
+}
+
+export interface Project {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
 }

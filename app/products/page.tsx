@@ -13,7 +13,7 @@ export default function ProductsPage() {
     <div className="bg-white dark:bg-[#080d0a] text-slate-900 dark:text-slate-100 min-h-screen">
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
-        <div className="max-w-7xl mx-auto px-6 space-y-4 text-center">
+        <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Our Products
           </span>
@@ -34,6 +34,7 @@ export default function ProductsPage() {
             <div
               key={cat.slug}
               id={cat.slug}
+              data-reveal
               className={`scroll-mt-24 flex flex-col lg:flex-row items-stretch border border-slate-150 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm group hover:border-[#1B4D3E] dark:hover:border-[#276a55] transition-all duration-300 ${
                 isEven ? "" : "lg:flex-row-reverse"
               }`}

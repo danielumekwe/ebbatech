@@ -32,9 +32,11 @@ export default function HomePage() {
       {/* 2. VALUE PROPOSITION STRIP */}
       <section className="py-16 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {valueProps.map((item) => (
+          {valueProps.map((item, idx) => (
             <div
               key={item.title}
+              data-reveal
+              data-reveal-delay={idx * 100}
               className="bg-slate-50 dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 rounded-3xl p-8 space-y-4"
             >
               <div className="w-12 h-12 bg-white dark:bg-[#080d0a] border border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center">
@@ -55,7 +57,7 @@ export default function HomePage() {
       <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Column 1: Summary */}
-          <div className="lg:col-span-6 space-y-6">
+          <div data-reveal className="lg:col-span-6 space-y-6">
             <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
               Welcome to Ebbatech
             </span>
@@ -83,6 +85,8 @@ export default function HomePage() {
 
           {/* Column 2: Image */}
           <div
+            data-reveal
+            data-reveal-delay={120}
             className="lg:col-span-6 h-80 sm:h-96 rounded-3xl bg-cover bg-center border border-slate-200 dark:border-slate-800 shadow-sm"
             style={{ backgroundImage: `url('/images/hero_warehouse.png')` }}
           />
@@ -92,7 +96,7 @@ export default function HomePage() {
       {/* 4. OUR SOLUTIONS */}
       <section className="bg-slate-50 dark:bg-[#0a0f0d] py-20 border-y border-slate-100 dark:border-slate-900">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-12 max-w-2xl">
+          <div data-reveal className="mb-12 max-w-2xl">
             <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block mb-2">
               Ebbatech Range
             </span>
@@ -105,9 +109,11 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {productCategories.map((cat) => (
+            {productCategories.map((cat, idx) => (
               <div
                 key={cat.slug}
+                data-reveal
+                data-reveal-delay={(idx % 4) * 100}
                 className="bg-white dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:border-[#1B4D3E] dark:hover:border-[#276a55] transition-all duration-300"
               >
                 <div>
@@ -149,7 +155,7 @@ export default function HomePage() {
 
       {/* 5. SERVICES PREVIEW */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
+        <div data-reveal className="max-w-3xl mx-auto text-center space-y-6">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             How We Work
           </span>
@@ -179,7 +185,7 @@ export default function HomePage() {
 
       {/* 6. CLIENTS BAND */}
       <section className="bg-slate-50 dark:bg-[#0a0f0d] py-20 border-y border-slate-100 dark:border-slate-900 overflow-hidden">
-        <div className="max-w-2xl mx-auto px-6 text-center space-y-4 mb-12">
+        <div data-reveal className="max-w-2xl mx-auto px-6 text-center space-y-4 mb-12">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Trusted Across Nigeria
           </span>
@@ -193,7 +199,7 @@ export default function HomePage() {
 
       {/* 7. CLOSING CTA */}
       <section className="py-20 max-w-5xl mx-auto px-6">
-        <div className="bg-[#1B4D3E] text-white rounded-3xl p-10 md:p-14 text-center space-y-5 shadow-md">
+        <div data-reveal className="bg-[#1B4D3E] text-white rounded-3xl p-10 md:p-14 text-center space-y-5 shadow-md">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             Ready to reclaim your space?
           </h2>

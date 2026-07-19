@@ -9,6 +9,7 @@ export const services: Service[] = [
       "When finding the right storage solution, it's always reassuring to have an expert by your side. Our experienced and knowledgeable sales and design team give you a world-class blend of valuable insight, guidance and practical assistance.",
       "Looking for a much more in-depth review of your warehouse or storage facility? Ebbatech Nig. Ltd. provides analysis, advice and on-going support to give you just that."
     ],
+    images: ["/photos/eb5.jpeg", "/photos/eb3.jpeg", "/photos/eb6.jpeg"],
     ctaLabel: "Book a consultation"
   },
   {
@@ -23,6 +24,7 @@ export const services: Service[] = [
       "Recommendations matched to your capacity, workflow and growth plans",
       "Practical, hands-on support through implementation"
     ],
+    images: ["/photos/eb9.jpeg", "/photos/eb11.jpeg", "/photos/eb12.jpeg"],
     ctaLabel: "Request a facility review"
   },
   {
@@ -34,6 +36,7 @@ export const services: Service[] = [
       "Ebbatech Nigeria Limited provides installation teams for the relocation, removal and reconfiguration of your pallet racking.",
       "Contact us today for a quotation, or send us an email."
     ],
+    images: ["/photos/eb4.jpeg", "/photos/eb7.jpeg", "/photos/eb10.jpeg"],
     ctaLabel: "Get a quotation"
   }
 ];

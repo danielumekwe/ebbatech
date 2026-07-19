@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Check } from "lucide-react";
 import { services } from "@/lib/data/services";
 
@@ -19,7 +20,7 @@ export default function ServicesPage() {
     <div className="bg-white dark:bg-[#080d0a] text-slate-900 dark:text-slate-100 min-h-screen">
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
-        <div className="max-w-7xl mx-auto px-6 space-y-4 text-center">
+        <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Our Services
           </span>
@@ -37,6 +38,7 @@ export default function ServicesPage() {
           <div
             key={service.id}
             id={service.slug}
+            data-reveal
             className="space-y-6 scroll-mt-24 pb-16 border-b border-slate-100 dark:border-slate-855 last:border-b-0 last:pb-0"
           >
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
@@ -49,6 +51,22 @@ export default function ServicesPage() {
             <div className="space-y-4 text-xs text-slate-555 dark:text-slate-400 leading-relaxed font-light">
               {service.body.map((paragraph, pIdx) => (
                 <p key={pIdx}>{paragraph}</p>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              {service.images.map((image, iIdx) => (
+                <div
+                  key={image}
+                  className="relative aspect-[4/3] rounded-xl overflow-hidden border border-slate-150 dark:border-slate-800"
+                >
+                  <Image
+                    src={image}
+                    alt={`${service.name} ${iIdx + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               ))}
             </div>
 

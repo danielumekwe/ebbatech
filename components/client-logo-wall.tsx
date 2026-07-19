@@ -4,9 +4,11 @@ import { clients } from "@/lib/data/clients";
 export default function ClientLogoWall() {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      {clients.map((client) => (
+      {clients.map((client, idx) => (
         <div
           key={client.name}
+          data-reveal
+          data-reveal-delay={(idx % 8) * 60}
           className="bg-white dark:bg-white border border-slate-150 dark:border-slate-800 rounded-2xl h-24 flex items-center justify-center px-6 text-center hover:border-[#1B4D3E] transition-colors"
         >
           {client.logo ? (

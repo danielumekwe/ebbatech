@@ -14,7 +14,7 @@ export default function ClientsPage() {
     <div className="bg-white dark:bg-[#080d0a] text-slate-900 dark:text-slate-100 min-h-screen">
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
-        <div className="max-w-7xl mx-auto px-6 space-y-4 text-center">
+        <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Our Clients
           </span>
@@ -29,7 +29,7 @@ export default function ClientsPage() {
 
       {/* Body + Client Logo Wall */}
       <section className="py-20 max-w-7xl mx-auto px-6 space-y-16">
-        <div className="text-center space-y-3 max-w-2xl mx-auto">
+        <div data-reveal className="text-center space-y-3 max-w-2xl mx-auto">
           <p className="text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed">
             Every year we help scores of companies to become more efficient and more productive.
           </p>
@@ -43,7 +43,7 @@ export default function ClientsPage() {
 
       {/* Sectors We Serve */}
       <section className="py-16 bg-slate-50 dark:bg-[#0a0f0d] border-y border-slate-100 dark:border-slate-900">
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
+        <div data-reveal className="max-w-5xl mx-auto px-6 text-center space-y-6">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
             Sectors We Serve
           </span>
@@ -61,7 +61,7 @@ export default function ClientsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12">
+      <section data-reveal className="py-12">
         <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
           <Handshake className="w-8 h-8 text-[#F27052] mx-auto" />
           <div className="pt-2">
