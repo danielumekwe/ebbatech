@@ -1,6 +1,14 @@
 {
   "heroSlides": [
     {
+      "image": "/images/pallet_racking.png",
+      "badge": "Heavy Duty Warehouse Racking Solutions",
+      "heading": "Heavy Duty Warehouse Racking",
+      "description": "Racking systems built to carry serious load and keep high-volume operations moving.",
+      "ctaLabel": "Enquire about racking",
+      "ctaHref": "/contact?type=Racking"
+    },
+    {
       "image": "/images/hero_warehouse.png",
       "badge": "Storage, Racking & Shelving Solutions",
       "heading": "Nigeria's One-Stop Shop",
@@ -10,14 +18,6 @@
       "ctaHref": "/contact",
       "secondaryCtaLabel": "Explore Our Products",
       "secondaryCtaHref": "/products"
-    },
-    {
-      "image": "/images/pallet_racking.png",
-      "badge": "Heavy Duty Warehouse Racking Solutions",
-      "heading": "Heavy Duty Warehouse Racking",
-      "description": "Racking systems built to carry serious load and keep high-volume operations moving.",
-      "ctaLabel": "Enquire about racking",
-      "ctaHref": "/contact?type=Racking"
     },
     {
       "image": "/images/shelving_system.png",
