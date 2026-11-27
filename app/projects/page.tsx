@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBanner from "@/components/cta-banner";
 import { projects } from "@/lib/data/projects";
+import { pageMetadata } from "@/lib/seo";
+import page from "@/content/pages/projects.json";
 
-export const metadata: Metadata = {
-  title: "Our Projects | Ebbatech Nigeria Limited",
-  description: "A look at pallet racking, bulk storage and warehouse fit-out projects delivered by Ebbatech Nigeria Limited.",
-};
+export const metadata: Metadata = pageMetadata("projects");
 
 export default function ProjectsPage() {
   return (
@@ -15,13 +14,13 @@ export default function ProjectsPage() {
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
         <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
-            Our Projects
+            {page.header.eyebrow}
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-            Our Projects
+            {page.header.title}
           </h1>
           <p className="text-xs text-slate-405 font-light max-w-xl mx-auto leading-relaxed">
-            A look inside the warehouses and facilities we&apos;ve fitted out across Nigeria.
+            {page.header.subtitle}
           </p>
         </div>
       </section>
@@ -60,11 +59,7 @@ export default function ProjectsPage() {
 
       {/* CTA Banner */}
       <section className="pb-20 max-w-5xl mx-auto px-6">
-        <CtaBanner
-          image="/photos/eb5.jpeg"
-          title="Ready to take your warehouse to the next level?"
-          subtitle="Tell us about your project and we'll come back with a solution and a quotation."
-        />
+        <CtaBanner {...page.cta} />
       </section>
     </div>
   );

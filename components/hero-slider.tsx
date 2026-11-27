@@ -3,37 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
-import { productCategories } from "@/lib/data/products";
+import home from "@/content/home.json";
+import { HeroSlide } from "@/types";
 
-interface Slide {
-  image: string;
-  badge: string;
-  heading: React.ReactNode;
-  description: string;
-  cta: { label: string; href: string };
-}
-
-const slides: Slide[] = [
-  {
-    image: "/images/hero_warehouse.png",
-    badge: "Storage, Racking & Shelving Solutions",
-    heading: (
-      <>
-        Nigeria&apos;s One-Stop Shop <br />
-        <span className="text-[#F27052]">for Storage Solutions</span>
-      </>
-    ),
-    description: "Ebbatech is the leading storage, material handling and space-making company of choice — designing, manufacturing and installing industrial storage that helps your business do more with the space you already have.",
-    cta: { label: "Get a Free Quote", href: "/contact" }
-  },
-  ...productCategories.map((cat) => ({
-    image: cat.image,
-    badge: cat.name,
-    heading: <>{cat.name}</>,
-    description: cat.description,
-    cta: { label: cat.ctaLabel, href: `/contact?type=${encodeURIComponent(cat.name)}` }
-  }))
-];
+const slides: HeroSlide[] = home.heroSlides;
 
 const AUTOPLAY_MS = 7000;
 
@@ -77,6 +50,13 @@ export default function HeroSlider() {
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">
                 {slide.heading}
+                {slide.headingHighlight && (
+                  <>
+                    {" "}
+                    <br />
+                    <span className="text-[#F27052]">{slide.headingHighlight}</span>
+                  </>
+                )}
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-slate-200 font-light leading-relaxed max-w-2xl">
@@ -85,17 +65,17 @@ export default function HeroSlider() {
 
               <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row gap-4">
                 <Link
-                  href={slide.cta.href}
+                  href={slide.ctaHref}
                   className="inline-block bg-[#F27052] hover:bg-[#ff8a6f] text-white text-sm sm:text-base font-bold px-8 sm:px-10 py-4 rounded-xl transition-all text-center shadow-lg shadow-black/20"
                 >
-                  {slide.cta.label}
+                  {slide.ctaLabel}
                 </Link>
-                {idx === 0 && (
+                {slide.secondaryCtaLabel && slide.secondaryCtaHref && (
                   <Link
-                    href="/products"
+                    href={slide.secondaryCtaHref}
                     className="inline-block bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white text-sm sm:text-base font-bold px-8 sm:px-10 py-4 rounded-xl transition-all text-center"
                   >
-                    Explore Our Products
+                    {slide.secondaryCtaLabel}
                   </Link>
                 )}
               </div>

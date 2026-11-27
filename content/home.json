@@ -1,0 +1,111 @@
+{
+  "heroSlides": [
+    {
+      "image": "/images/hero_warehouse.png",
+      "badge": "Storage, Racking & Shelving Solutions",
+      "heading": "Nigeria's One-Stop Shop",
+      "headingHighlight": "for Storage Solutions",
+      "description": "Ebbatech is the leading storage, material handling and space-making company of choice — designing, manufacturing and installing industrial storage that helps your business do more with the space you already have.",
+      "ctaLabel": "Get a Free Quote",
+      "ctaHref": "/contact",
+      "secondaryCtaLabel": "Explore Our Products",
+      "secondaryCtaHref": "/products"
+    },
+    {
+      "image": "/images/pallet_racking.png",
+      "badge": "Heavy Duty Warehouse Racking",
+      "heading": "Heavy Duty Warehouse Racking",
+      "headingHighlight": "",
+      "description": "Racking systems built to carry serious load and keep high-volume operations moving.",
+      "ctaLabel": "Enquire about racking",
+      "ctaHref": "/contact?type=Racking",
+      "secondaryCtaLabel": "",
+      "secondaryCtaHref": ""
+    },
+    {
+      "image": "/images/shelving_system.png",
+      "badge": "Shelving System",
+      "heading": "Shelving System",
+      "headingHighlight": "",
+      "description": "A complete shelving range for warehouses, offices, retail floors, libraries and archives.",
+      "ctaLabel": "Enquire about shelving",
+      "ctaHref": "/contact?type=Shelving",
+      "secondaryCtaLabel": "",
+      "secondaryCtaHref": ""
+    },
+    {
+      "image": "/images/hero_warehouse.png",
+      "badge": "Storage Solutions",
+      "heading": "Storage Solutions",
+      "headingHighlight": "",
+      "description": "Regardless of the industry you operate in, Ebbatech's range of unique storage solutions are engineered around you — ensuring you're doing things as efficiently as possible now, yet remain flexible enough to adapt as your business changes.",
+      "ctaLabel": "Discuss your requirements",
+      "ctaHref": "/contact?type=Storage%20Solutions",
+      "secondaryCtaLabel": "",
+      "secondaryCtaHref": ""
+    },
+    {
+      "image": "/images/mobile_shelving.png",
+      "badge": "Mobile Shelving",
+      "heading": "Mobile Shelving",
+      "headingHighlight": "",
+      "description": "Mobile shelving systems have become one of the most essential high-density storage systems, especially where there isn't a lot of available floor space. This system could not only save you money, it can also free up floor space for either more storage capacity or personnel space. As your business grows, the mobile system can grow with you, making your office environment more productive without taking on more expensive floor space. Our clients here in Nigeria include banks, government agencies, data centres, oil and gas companies, multinational companies, records and archiving operations and more. For these clients the storage of files and products needs to be maximised in the given area — this is where a mobile storage system will work.",
+      "ctaLabel": "See if mobile shelving fits your space",
+      "ctaHref": "/contact?type=Mobile%20Shelving",
+      "secondaryCtaLabel": "",
+      "secondaryCtaHref": ""
+    }
+  ],
+  "valueProps": [
+    {
+      "icon": "Compass",
+      "title": "Design & Engineering",
+      "description": "Storage systems expertly designed around your facility, not off a generic shelf."
+    },
+    {
+      "icon": "Layers",
+      "title": "End-to-End Delivery",
+      "description": "From initial planning through to installation, service and on-going support."
+    },
+    {
+      "icon": "TrendingUp",
+      "title": "Proven at Scale",
+      "description": "Trusted by Nigeria's leading brands and its most ambitious SMEs."
+    }
+  ],
+  "welcome": {
+    "eyebrow": "Welcome to Ebbatech",
+    "title": "Who We Are",
+    "paragraphs": [
+      "Ebbatech Nigeria Limited is one of the leading companies in the storage systems market, providing industrial storage and shelving that is expertly designed and engineered to enable businesses to increase capacity, productivity and efficiency.",
+      "We specialise in the design, manufacturing, sales and servicing of metal racking, mobile archive systems and other storage solutions — making us a genuine one-stop shop for storage.",
+      "We have helped some of Nigeria's leading brands and pioneering SMEs, providing them with access to global expertise and support, from initial planning through to installation and on-going service and support."
+    ],
+    "linkLabel": "More about us",
+    "image": "/images/hero_warehouse.png"
+  },
+  "solutions": {
+    "eyebrow": "Ebbatech Range",
+    "title": "Our Solutions",
+    "intro": "From heavy duty warehouse racking to high-density mobile shelving, our systems are engineered around your facility — not off a generic shelf.",
+    "cardLinkLabel": "View Specifications",
+    "allLinkLabel": "View all products"
+  },
+  "servicesPreview": {
+    "eyebrow": "How We Work",
+    "title": "We Don't Just Sell Racking",
+    "linkLabel": "See how we work"
+  },
+  "clientsBand": {
+    "eyebrow": "Trusted Across Nigeria",
+    "text": "Every year we help scores of companies become more efficient and more productive."
+  },
+  "cta": {
+    "eyebrow": "Get Started",
+    "title": "Ready to reclaim your space?",
+    "subtitle": "Tell us about your warehouse, office or archive and we'll come back with a solution and a quotation.",
+    "image": "/photos/eb7.jpeg",
+    "buttonLabel": "Request a Quote",
+    "buttonHref": "/contact"
+  }
+}

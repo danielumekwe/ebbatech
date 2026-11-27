@@ -1,0 +1,54 @@
+{
+  "header": {
+    "eyebrow": "About Ebbatech",
+    "title": "About Ebbatech",
+    "subtitle": "The leading storage, material handling and space-making company of choice."
+  },
+  "story": {
+    "eyebrow": "Our Story",
+    "paragraphs": [
+      "Ebbatech Nigeria Limited is one of the leading companies in the storage systems market, providing industrial storage and shelving that is expertly designed and engineered to enable businesses to increase capacity, productivity and efficiency.",
+      "We specialise in the design, manufacturing, sales and servicing of metal racking, mobile archive systems and other storage solutions — making us a genuine one-stop shop for storage.",
+      "We have helped some of Nigeria's leading brands and pioneering SMEs, providing them with access to global expertise and support. We work with our customers through the complete lifecycle of their storage needs, from initial planning through to installation and on-going service and support."
+    ],
+    "image": "/photos/eb3.jpeg"
+  },
+  "mission": {
+    "eyebrow": "Our Mission",
+    "quote": "To become a leading provider of industrial storage and shelving, expertly designed and engineered to enable businesses to increase capacity, productivity, and efficiency."
+  },
+  "differentiators": {
+    "eyebrow": "What Sets Us Apart",
+    "title": "Why Businesses Choose Ebbatech",
+    "items": [
+      {
+        "icon": "Layers",
+        "title": "Complete Lifecycle Partnership",
+        "description": "Planning, design, manufacture, installation, support."
+      },
+      {
+        "icon": "Globe2",
+        "title": "Global Expertise, Local Delivery",
+        "description": "International standards, applied to Nigerian facilities."
+      },
+      {
+        "icon": "Factory",
+        "title": "In-House Manufacturing",
+        "description": "We make what we sell and stand behind it."
+      },
+      {
+        "icon": "Building2",
+        "title": "Sectors Served",
+        "description": "Banks, government agencies, data centres, oil and gas, multinationals, records and archiving, retail, logistics and more."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Get Started",
+    "title": "Let's talk about your space",
+    "subtitle": "Whatever stage you're at, our team is ready to help you plan, design and install the right storage solution.",
+    "image": "/photos/eb6.jpeg",
+    "buttonLabel": "Request a Quote",
+    "buttonHref": "/contact"
+  }
+}

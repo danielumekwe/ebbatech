@@ -1,28 +1,12 @@
 import Link from "next/link";
-import { Compass, Layers, TrendingUp, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import HeroSlider from "@/components/hero-slider";
 import ClientLogoMarquee from "@/components/client-logo-marquee";
 import CtaBanner from "@/components/cta-banner";
 import { productCategories } from "@/lib/data/products";
 import { services } from "@/lib/data/services";
-
-const valueProps = [
-  {
-    icon: Compass,
-    title: "Design & Engineering",
-    desc: "Storage systems expertly designed around your facility, not off a generic shelf."
-  },
-  {
-    icon: Layers,
-    title: "End-to-End Delivery",
-    desc: "From initial planning through to installation, service and on-going support."
-  },
-  {
-    icon: TrendingUp,
-    title: "Proven at Scale",
-    desc: "Trusted by Nigeria's leading brands and its most ambitious SMEs."
-  }
-];
+import home from "@/content/home.json";
+import { iconFor } from "@/lib/icons";
 
 export default function HomePage() {
   return (
@@ -33,24 +17,27 @@ export default function HomePage() {
       {/* 2. VALUE PROPOSITION STRIP */}
       <section className="py-16 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {valueProps.map((item, idx) => (
-            <div
-              key={item.title}
-              data-reveal
-              data-reveal-delay={idx * 100}
-              className="bg-slate-50 dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 rounded-3xl p-8 space-y-4"
-            >
-              <div className="w-12 h-12 bg-white dark:bg-[#080d0a] border border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center">
-                <item.icon className="w-5 h-5 text-[#F27052]" />
+          {home.valueProps.map((item, idx) => {
+            const Icon = iconFor(item.icon);
+            return (
+              <div
+                key={item.title}
+                data-reveal
+                data-reveal-delay={idx * 100}
+                className="bg-slate-50 dark:bg-[#0c1410] border border-slate-150 dark:border-slate-800 rounded-3xl p-8 space-y-4"
+              >
+                <div className="w-12 h-12 bg-white dark:bg-[#080d0a] border border-slate-100 dark:border-slate-800 rounded-2xl flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-[#F27052]" />
+                </div>
+                <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed font-light">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
-                {item.title}
-              </h3>
-              <p className="text-xs text-slate-550 dark:text-slate-400 leading-relaxed font-light">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -60,27 +47,21 @@ export default function HomePage() {
           {/* Column 1: Summary */}
           <div data-reveal className="lg:col-span-6 space-y-6">
             <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
-              Welcome to Ebbatech
+              {home.welcome.eyebrow}
             </span>
             <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
-              Who We Are
+              {home.welcome.title}
             </h2>
             <div className="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-              <p>
-                Ebbatech Nigeria Limited is one of the leading companies in the storage systems market, providing industrial storage and shelving that is expertly designed and engineered to enable businesses to increase capacity, productivity and efficiency.
-              </p>
-              <p>
-                We specialise in the design, manufacturing, sales and servicing of metal racking, mobile archive systems and other storage solutions &mdash; making us a genuine one-stop shop for storage.
-              </p>
-              <p>
-                We have helped some of Nigeria&apos;s leading brands and pioneering SMEs, providing them with access to global expertise and support, from initial planning through to installation and on-going service and support.
-              </p>
+              {home.welcome.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
             <Link
               href="/about"
               className="text-xs font-bold text-[#1B4D3E] dark:text-[#ff8a6f] hover:underline inline-flex items-center gap-1.5"
             >
-              More about us <ArrowRight className="w-3.5 h-3.5" />
+              {home.welcome.linkLabel} <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
@@ -89,7 +70,7 @@ export default function HomePage() {
             data-reveal
             data-reveal-delay={120}
             className="lg:col-span-6 h-80 sm:h-96 rounded-3xl bg-cover bg-center border border-slate-200 dark:border-slate-800 shadow-sm"
-            style={{ backgroundImage: `url('/images/hero_warehouse.png')` }}
+            style={{ backgroundImage: `url('${home.welcome.image}')` }}
           />
         </div>
       </section>
@@ -99,13 +80,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div data-reveal className="mb-12 max-w-2xl">
             <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block mb-2">
-              Ebbatech Range
+              {home.solutions.eyebrow}
             </span>
             <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">
-              Our Solutions
+              {home.solutions.title}
             </h2>
             <p className="text-sm text-slate-555 dark:text-slate-400 font-light leading-relaxed">
-              From heavy duty warehouse racking to high-density mobile shelving, our systems are engineered around your facility &mdash; not off a generic shelf.
+              {home.solutions.intro}
             </p>
           </div>
 
@@ -136,7 +117,7 @@ export default function HomePage() {
                     href={`/products#${cat.slug}`}
                     className="text-xs font-bold text-[#F27052] hover:underline inline-flex items-center gap-1"
                   >
-                    View Specifications &rarr;
+                    {home.solutions.cardLinkLabel} &rarr;
                   </Link>
                 </div>
               </div>
@@ -148,7 +129,7 @@ export default function HomePage() {
               href="/products"
               className="text-xs font-bold text-[#1B4D3E] dark:text-[#ff8a6f] hover:underline inline-flex items-center gap-1.5"
             >
-              View all products <ArrowRight className="w-3.5 h-3.5" />
+              {home.solutions.allLinkLabel} <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
@@ -158,10 +139,10 @@ export default function HomePage() {
       <section className="py-20 max-w-7xl mx-auto px-6">
         <div data-reveal className="max-w-3xl mx-auto text-center space-y-6">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
-            How We Work
+            {home.servicesPreview.eyebrow}
           </span>
           <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
-            We Don&apos;t Just Sell Racking
+            {home.servicesPreview.title}
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-350">
             {services.map((service, idx) => (
@@ -178,7 +159,7 @@ export default function HomePage() {
               href="/services"
               className="text-xs font-bold text-[#1B4D3E] dark:text-[#ff8a6f] hover:underline inline-flex items-center gap-1.5"
             >
-              See how we work <ArrowRight className="w-3.5 h-3.5" />
+              {home.servicesPreview.linkLabel} <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
@@ -188,10 +169,10 @@ export default function HomePage() {
       <section className="bg-slate-50 dark:bg-[#0a0f0d] py-20 border-y border-slate-100 dark:border-slate-900 overflow-hidden">
         <div data-reveal className="max-w-2xl mx-auto px-6 text-center space-y-4 mb-12">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
-            Trusted Across Nigeria
+            {home.clientsBand.eyebrow}
           </span>
           <p className="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
-            Every year we help scores of companies become more efficient and more productive.
+            {home.clientsBand.text}
           </p>
         </div>
 
@@ -200,11 +181,7 @@ export default function HomePage() {
 
       {/* 7. CLOSING CTA */}
       <section className="py-20 max-w-5xl mx-auto px-6">
-        <CtaBanner
-          image="/photos/eb7.jpeg"
-          title="Ready to reclaim your space?"
-          subtitle="Tell us about your warehouse, office or archive and we'll come back with a solution and a quotation."
-        />
+        <CtaBanner {...home.cta} />
       </section>
     </div>
   );

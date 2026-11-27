@@ -10,6 +10,7 @@ import FloatActions from "@/components/float-actions";
 import CookieConsent from "@/components/cookie-consent";
 import FirstVisitSplash from "@/components/first-visit-splash";
 import ScrollReveal from "@/components/scroll-reveal";
+import { pageMetadata } from "@/lib/seo";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -24,8 +25,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ebbatech Nigeria | Industrial Storage, Racking & Shelving Solutions",
-  description: "Ebbatech Nigeria Limited designs, manufactures and installs industrial racking, shelving and mobile storage systems. A one-stop shop for storage solutions in Lagos and across Nigeria.",
+  ...pageMetadata("home"),
   metadataBase: new URL("https://www.ebbatech.com.ng"),
 };
 

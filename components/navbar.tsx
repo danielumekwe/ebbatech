@@ -6,6 +6,7 @@ import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import MegaMenu from "./mega-menu";
 import TopBar from "./top-bar";
 import { productCategories } from "@/lib/data/products";
+import navigation from "@/content/navigation.json";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,37 +37,25 @@ export default function Navbar() {
 
           {/* Navigation Items (Desktop) */}
           <div className="hidden lg:flex items-center gap-6 text-[10px] xl:text-xs font-bold uppercase tracking-wider text-[#F27052]">
-            <Link href="/" className="hover:text-[#1B4D3E] transition-colors">
-              HOME
-            </Link>
-            <Link href="/about" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
-              ABOUT US
-            </Link>
-            <Link href="/services" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
-              SERVICES
-            </Link>
-
-            {/* PRODUCTS (Mega Dropdown Menu) */}
-            <MegaMenu />
-
-            <Link href="/projects" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
-              PROJECTS
-            </Link>
-            <Link href="/clients" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
-              CLIENTS
-            </Link>
-            <Link href="/contact" className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
-              CONTACT
-            </Link>
+            {navigation.header.links.map((link) =>
+              link.href === "/products" ? (
+                /* PRODUCTS (Mega Dropdown Menu) */
+                <MegaMenu key={link.href} label={link.label} />
+              ) : (
+                <Link key={link.href} href={link.href} className="hover:text-[#1B4D3E] transition-colors whitespace-nowrap">
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Action CTAs (Desktop) */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="/contact"
+              href={navigation.header.cta.href}
               className="bg-[#F27052] hover:bg-[#1B4D3E] text-white text-[10px] xl:text-xs font-bold px-5 py-3 rounded-xl flex items-center gap-1.5 transition-colors shadow-sm whitespace-nowrap"
             >
-              REQUEST A QUOTE <ArrowRight className="w-3.5 h-3.5" />
+              {navigation.header.cta.label} <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
@@ -85,67 +74,57 @@ export default function Navbar() {
         {/* Mobile Drawer Overlay */}
         {isOpen && (
           <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 p-6 flex flex-col gap-6 text-xs font-bold uppercase tracking-wider text-[#F27052] shadow-xl z-30 animate-in fade-in slide-in-from-top-2 duration-150">
-            <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              HOME
-            </Link>
-            <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              ABOUT US
-            </Link>
-            <Link href="/services" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              SERVICES
-            </Link>
-            <div className="border-b border-slate-100 pb-3">
-              <button
-                onClick={() => setIsProductsOpen(!isProductsOpen)}
-                className="w-full flex items-center justify-between hover:text-[#1B4D3E] transition-colors"
-                aria-expanded={isProductsOpen}
-              >
-                PRODUCTS
-                <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
-              </button>
-              {isProductsOpen && (
-                <div className="mt-3 flex flex-col gap-3 pl-3 border-l-2 border-slate-100 normal-case font-semibold text-[11px] tracking-normal">
-                  {productCategories.map((cat) => (
-                    <Link
-                      key={cat.slug}
-                      href={`/products#${cat.slug}`}
-                      onClick={() => {
-                        setIsOpen(false);
-                        setIsProductsOpen(false);
-                      }}
-                      className="hover:text-[#1B4D3E] transition-colors"
-                    >
-                      {cat.name}
-                    </Link>
-                  ))}
-                  <Link
-                    href="/products"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setIsProductsOpen(false);
-                    }}
-                    className="text-[#1B4D3E] hover:text-[#F27052] transition-colors"
+            {navigation.header.links.map((link) =>
+              link.href === "/products" ? (
+                <div key={link.href} className="border-b border-slate-100 pb-3">
+                  <button
+                    onClick={() => setIsProductsOpen(!isProductsOpen)}
+                    className="w-full flex items-center justify-between hover:text-[#1B4D3E] transition-colors"
+                    aria-expanded={isProductsOpen}
                   >
-                    View All Products &rarr;
-                  </Link>
+                    {link.label}
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {isProductsOpen && (
+                    <div className="mt-3 flex flex-col gap-3 pl-3 border-l-2 border-slate-100 normal-case font-semibold text-[11px] tracking-normal">
+                      {productCategories.map((cat) => (
+                        <Link
+                          key={cat.slug}
+                          href={`/products#${cat.slug}`}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setIsProductsOpen(false);
+                          }}
+                          className="hover:text-[#1B4D3E] transition-colors"
+                        >
+                          {cat.name}
+                        </Link>
+                      ))}
+                      <Link
+                        href={link.href}
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsProductsOpen(false);
+                        }}
+                        className="text-[#1B4D3E] hover:text-[#F27052] transition-colors"
+                      >
+                        {navigation.header.allProductsLabel} &rarr;
+                      </Link>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-            <Link href="/projects" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              PROJECTS
-            </Link>
-            <Link href="/clients" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              CLIENTS
-            </Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
-              CONTACT
-            </Link>
+              ) : (
+                <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="hover:text-[#1B4D3E] transition-colors pb-3 border-b border-slate-100">
+                  {link.label}
+                </Link>
+              )
+            )}
             <Link
-              href="/contact"
+              href={navigation.header.cta.href}
               onClick={() => setIsOpen(false)}
               className="bg-[#F27052] hover:bg-[#1B4D3E] text-white text-center py-3.5 rounded-xl transition-all shadow-md"
             >
-              REQUEST A QUOTE
+              {navigation.header.cta.label}
             </Link>
           </div>
         )}

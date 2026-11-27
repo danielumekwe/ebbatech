@@ -1,0 +1,15 @@
+{
+  "header": {
+    "eyebrow": "Our Projects",
+    "title": "Our Projects",
+    "subtitle": "A look inside the warehouses and facilities we've fitted out across Nigeria."
+  },
+  "cta": {
+    "eyebrow": "Get Started",
+    "title": "Ready to take your warehouse to the next level?",
+    "subtitle": "Tell us about your project and we'll come back with a solution and a quotation.",
+    "image": "/photos/eb5.jpeg",
+    "buttonLabel": "Request a Quote",
+    "buttonHref": "/contact"
+  }
+}

@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:cloudflare": "DEPLOY_TARGET=cloudflare next build",
+    "validate": "node scripts/validate-content.mjs",
+    "build": "npm run validate && next build",
+    "build:cloudflare": "npm run validate && DEPLOY_TARGET=cloudflare next build",
     "preview:cloudflare": "npm run build:cloudflare && wrangler dev",
     "start": "next start",
     "lint": "eslint"

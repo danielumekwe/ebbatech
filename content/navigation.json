@@ -1,0 +1,117 @@
+{
+  "header": {
+    "links": [
+      {
+        "label": "HOME",
+        "href": "/"
+      },
+      {
+        "label": "ABOUT US",
+        "href": "/about"
+      },
+      {
+        "label": "SERVICES",
+        "href": "/services"
+      },
+      {
+        "label": "PRODUCTS",
+        "href": "/products"
+      },
+      {
+        "label": "PROJECTS",
+        "href": "/projects"
+      },
+      {
+        "label": "CLIENTS",
+        "href": "/clients"
+      },
+      {
+        "label": "CONTACT",
+        "href": "/contact"
+      }
+    ],
+    "allProductsLabel": "View All Products",
+    "cta": {
+      "label": "REQUEST A QUOTE",
+      "href": "/contact"
+    }
+  },
+  "footer": {
+    "columns": {
+      "company": {
+        "title": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "href": "/about"
+          },
+          {
+            "label": "Our Mission",
+            "href": "/about#mission"
+          },
+          {
+            "label": "Our Projects",
+            "href": "/projects"
+          },
+          {
+            "label": "Our Clients",
+            "href": "/clients"
+          }
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "links": [
+          {
+            "label": "Consulting",
+            "href": "/services#consulting-service"
+          },
+          {
+            "label": "Analysis & Advice",
+            "href": "/services#analysis-and-advice"
+          },
+          {
+            "label": "Installation & Relocation",
+            "href": "/services#installation-and-relocation"
+          }
+        ]
+      },
+      "products": {
+        "title": "Products",
+        "links": [
+          {
+            "label": "Heavy Duty Racking",
+            "href": "/products#warehouse-racking"
+          },
+          {
+            "label": "Shelving Systems",
+            "href": "/products#shelving-systems"
+          },
+          {
+            "label": "Storage Solutions",
+            "href": "/products#storage-solutions"
+          },
+          {
+            "label": "Mobile Shelving",
+            "href": "/products#mobile-shelving"
+          }
+        ]
+      }
+    },
+    "legalLinks": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Terms of Service",
+        "href": "/terms"
+      },
+      {
+        "label": "Cookie Policy",
+        "href": "/cookies"
+      }
+    ],
+    "copyright": "Ebbatech Nigeria Limited. All rights reserved."
+  }
+}

@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { productCategories } from "@/lib/data/products";
+import { pageMetadata } from "@/lib/seo";
+import page from "@/content/pages/products.json";
 
-export const metadata: Metadata = {
-  title: "Warehouse Racking, Shelving & Mobile Storage | Ebbatech Nigeria",
-  description: "Pallet racking, long span shelving, mobile archive shelving, lockers, work benches and storage solutions engineered for your business.",
-};
+export const metadata: Metadata = pageMetadata("products");
 
 export default function ProductsPage() {
   return (
@@ -15,13 +14,13 @@ export default function ProductsPage() {
       <section className="bg-gradient-to-br from-slate-900 to-[#0f241d] text-white py-20 relative">
         <div data-reveal className="max-w-7xl mx-auto px-6 space-y-4 text-center">
           <span className="text-[10px] font-bold text-[#F27052] uppercase tracking-widest block">
-            Our Products
+            {page.header.eyebrow}
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-            Our Products
+            {page.header.title}
           </h1>
           <p className="text-xs text-slate-400 font-light max-w-xl mx-auto leading-relaxed">
-            Storage, racking and shelving engineered around your business.
+            {page.header.subtitle}
           </p>
         </div>
       </section>
@@ -69,7 +68,7 @@ export default function ProductsPage() {
                   {cat.bestFor && (
                     <div className="pt-2 space-y-2">
                       <span className="text-[10px] font-extrabold text-slate-900 dark:text-white uppercase tracking-wider block">
-                        Best for
+                        {page.bestForLabel}
                       </span>
                       <div className="flex flex-wrap gap-2">
                         {cat.bestFor.map((sector) => (
@@ -87,10 +86,10 @@ export default function ProductsPage() {
 
                 <div className="pt-4 border-t border-slate-200/50 dark:border-slate-800 flex justify-between items-center">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    Ebbatech Engineered
+                    {page.cardFootnote}
                   </span>
                   <Link
-                    href={`/contact?type=${encodeURIComponent(cat.name)}`}
+                    href={`/contact?type=${encodeURIComponent(cat.enquiryType)}`}
                     className="bg-[#1B4D3E] hover:bg-[#276a55] text-white text-xs font-bold px-6 py-2.5 rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
                     {cat.ctaLabel} <ArrowRight className="w-3.5 h-3.5" />

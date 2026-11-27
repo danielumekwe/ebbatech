@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Check } from "lucide-react";
+import page from "@/content/pages/contact.json";
+import site from "@/content/site.json";
 
 const enquiryTypes = [
   "Consulting",
@@ -41,7 +43,7 @@ export default function ContactForm() {
       "Project details:",
       project
     ].join("\n");
-    const mailto = `mailto:sales@ebbatech.com.ng?subject=${encodeURIComponent(
+    const mailto = `mailto:${site.emails.sales}?subject=${encodeURIComponent(
       `Enquiry from ${company || fullName}`
     )}&body=${encodeURIComponent(body)}${email ? `&cc=${encodeURIComponent(email)}` : ""}`;
     window.location.href = mailto;
@@ -55,7 +57,7 @@ export default function ContactForm() {
           <Check className="w-7 h-7" />
         </div>
         <p className="text-sm font-light leading-relaxed max-w-sm mx-auto">
-          Thank you &mdash; your enquiry has reached our team. We&apos;ll be in touch shortly.
+          {page.form.successMessage}
         </p>
       </div>
     );
@@ -157,7 +159,7 @@ export default function ContactForm() {
         type="submit"
         className="bg-[#F27052] hover:bg-[#ff8a6f] text-white font-bold px-8 py-3.5 rounded-xl transition-all cursor-pointer shadow-md"
       >
-        Send Enquiry &rarr;
+        {page.form.submitLabel} &rarr;
       </button>
     </form>
   );

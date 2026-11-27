@@ -14,11 +14,28 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Forms
 
-The Enquiry Form on `/contact` falls back to a `mailto:` link since there is no backend or email service configured. To wire up real submissions (e.g. via an API route + an email provider), add the integration and replace the `mailto:` handler in `components/contact-form.tsx`.
+The Enquiry Form on `/contact` opens the visitor's email app through a `mailto:` link, since there is no backend or email service. The visitor must press Send. To deliver submissions directly, add a form service and replace the handler in `components/contact-form.tsx`.
 
 ## Content
 
-Site copy is sourced from `ebbatech-website-content.md` (the Ebbatech Company Profile). Update that document first, then apply changes to the corresponding page/data files so the two stay in sync.
+Website text, image selections and SEO settings live in `content/*.json` and are edited with [Pages CMS](https://pagescms.org/), configured in `.pages.yml`. `ebbatech-website-content.md` is the original company profile, kept for reference.
+
+Editing notes:
+
+- Saving publishes: each save is a commit, and the website rebuilds. There are no drafts.
+- `npm run validate` runs before every build. If content is invalid the build fails and the last good version stays online. Read the build log for the reason.
+- Hero slides are separate from products. Update both when a product changes.
+- The address is stored three times: top bar, footer and contact page.
+- Footer links have their own text.
+- Do not change the ID or web address name of an existing product, service or project.
+- Upload JPG, PNG or WEBP images under 5 MB. Photos are served as uploaded, so under 500 KB is best.
+- Deleting an image that is still in use fails the build. To replace one, upload the new file and select it.
+
+Developer notes:
+
+- Declare every JSON field in `.pages.yml`; Pages CMS removes undeclared fields from lists when saving.
+- Keep `.pages.yml` in JSON syntax, because the validation script reads it.
+- Enquiry types are listed in both `.pages.yml` and `components/contact-form.tsx`. Page routes are also listed in the validation script.
 
 ## Deployment
 

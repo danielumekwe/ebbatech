@@ -1,0 +1,33 @@
+{
+  "companyName": "Ebbatech Nigeria Limited",
+  "website": "www.ebbatech.com.ng",
+  "emails": {
+    "general": "hello@ebbatech.com.ng",
+    "sales": "sales@ebbatech.com.ng"
+  },
+  "phones": [
+    "(+234) 803 448 4931",
+    "(+234) 905 559 7922"
+  ],
+  "address": {
+    "short": "22 Alhaja Kofoworola Crescent, Ikeja, Lagos",
+    "full": "22 Alhaja Kofoworola Crescent, Off Awolowo Way, Ikeja, Lagos.",
+    "lines": [
+      "Ebbatech Nigeria Limited",
+      "22 Alhaja Kofoworola Crescent",
+      "Off Awolowo Way",
+      "Ikeja, Lagos"
+    ]
+  },
+  "whatsapp": {
+    "number": "2348034484931",
+    "message": "Hello Ebbatech, I would like to make an inquiry about your storage and racking solutions."
+  },
+  "cookieBanner": {
+    "title": "GDPR & Cookie Consent",
+    "text": "We use cookies to optimize our website, analyze traffic, and improve user experiences. By clicking \"Accept All\", you consent to our use of cookies in accordance with our",
+    "policyLinkLabel": "Privacy Policy",
+    "acceptLabel": "Accept All",
+    "declineLabel": "Decline"
+  }
+}

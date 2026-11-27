@@ -1,35 +1,10 @@
+import clientData from "@/content/clients.json";
+import sectorData from "@/content/sectors.json";
 export interface Client {
   name: string;
   logo?: string;
 }
 
-export const clients: Client[] = [
-  { name: "RCCG", logo: "/images/clients/logos/rccg.png" },
-  { name: "FedEx Express", logo: "/images/clients/logos/fedex-express.png" },
-  { name: "FCMB", logo: "/images/clients/logos/fcmb.png" },
-  { name: "Jumia", logo: "/images/clients/logos/jumia.png" },
-  { name: "TotalEnergies", logo: "/images/clients/logos/total.png" },
-  { name: "House of Tara International", logo: "/images/clients/logos/house-of-tara.jpeg" },
-  { name: "PZ Cussons", logo: "/images/clients/logos/pz-cussons.webp" },
-  { name: "Schneider Electric", logo: "/images/clients/logos/schneider-electric.webp" },
-  { name: "UAC", logo: "/images/clients/logos/uac.png" },
-  { name: "Union Bank", logo: "/images/clients/logos/union-bank.webp" },
-  { name: "GTBank", logo: "/images/clients/logos/gtbank.webp" },
-  { name: "Fidelity Bank", logo: "/images/clients/logos/fidelity-bank.png" },
-  { name: "Nigerian Bottling Company Plc", logo: "/images/clients/logos/nigerian-bottling-company.png" },
-  { name: "Cadbury", logo: "/images/clients/logos/cadbury.png" },
-  { name: "House on the Rock", logo: "/images/clients/logos/house-on-the-rock.webp" },
-  { name: "Dangote", logo: "/images/clients/logos/dangote.png" }
-];
+export const clients: Client[] = clientData;
 
-export const sectorsServed = [
-  "Banking & Finance",
-  "Government Agencies",
-  "Data Centres",
-  "Oil and Gas",
-  "Multinational Companies",
-  "Records & Archiving",
-  "Retail",
-  "FMCG & Manufacturing",
-  "Logistics"
-];
+export const sectorsServed = sectorData.map((sector) => sector.name);

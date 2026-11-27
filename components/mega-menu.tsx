@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { productCategories } from "@/lib/data/products";
 
-export default function MegaMenu() {
+export default function MegaMenu({ label }: { label: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,7 +18,7 @@ export default function MegaMenu() {
         className="flex items-center gap-1.5 text-[#F27052] hover:text-[#1B4D3E] cursor-pointer transition-colors outline-none h-20 uppercase font-bold text-xs"
         aria-expanded={isOpen}
       >
-        PRODUCTS <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        {label} <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (

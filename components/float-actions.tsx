@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { MessageSquare, ArrowUp } from "lucide-react";
+import site from "@/content/site.json";
 
 export default function FloatActions() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -25,10 +26,8 @@ export default function FloatActions() {
     });
   };
 
-  const whatsappNumber = "2348034484931";
-  const whatsappMessage = encodeURIComponent(
-    "Hello Ebbatech, I would like to make an inquiry about your storage and racking solutions."
-  );
+  const whatsappNumber = site.whatsapp.number;
+  const whatsappMessage = encodeURIComponent(site.whatsapp.message);
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">

@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { ShieldAlert, X } from "lucide-react";
 import Link from "next/link";
+import site from "@/content/site.json";
 
 export default function CookieConsent() {
+  const banner = site.cookieBanner;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -42,22 +44,22 @@ export default function CookieConsent() {
         <div className="flex items-start gap-3">
           <ShieldAlert className="w-6 h-6 text-[#F27052] flex-shrink-0 mt-0.5" />
           <div>
-            <h4 className="font-bold text-sm text-white">GDPR & Cookie Consent</h4>
+            <h4 className="font-bold text-sm text-white">{banner.title}</h4>
             <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-              We use cookies to optimize our website, analyze traffic, and improve user experiences. By clicking &quot;Accept All&quot;, you consent to our use of cookies in accordance with our <Link href="/privacy" className="underline text-slate-200">Privacy Policy</Link>.
+              {banner.text} <Link href="/privacy" className="underline text-slate-200">{banner.policyLinkLabel}</Link>.
             </p>
             <div className="flex items-center gap-2 mt-4 text-xs font-bold">
               <button
                 onClick={handleAccept}
                 className="bg-[#F27052] hover:bg-[#ff8a6f] text-white px-4 py-2 rounded-lg transition-colors cursor-pointer"
               >
-                Accept All
+                {banner.acceptLabel}
               </button>
               <button
                 onClick={handleDecline}
                 className="border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white px-4 py-2 rounded-lg transition-colors cursor-pointer"
               >
-                Decline
+                {banner.declineLabel}
               </button>
             </div>
           </div>

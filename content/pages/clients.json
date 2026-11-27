@@ -1,0 +1,20 @@
+{
+  "header": {
+    "eyebrow": "Our Clients",
+    "title": "Our Clients",
+    "subtitle": "Trusted by Nigeria's leading brands and pioneering SMEs."
+  },
+  "intro": [
+    "Every year we help scores of companies to become more efficient and more productive.",
+    "We provide storage products that provide long-term solutions to clients in every type of business, and they are delighted with the result."
+  ],
+  "sectorsHeading": "Sectors We Serve",
+  "cta": {
+    "eyebrow": "Get Started",
+    "title": "Join Nigeria's leading brands",
+    "subtitle": "Every year we help scores of companies become more efficient and more productive. Let's talk about your space.",
+    "image": "/photos/eb10.jpeg",
+    "buttonLabel": "Request a Quote",
+    "buttonHref": "/contact"
+  }
+}

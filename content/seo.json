@@ -1,0 +1,52 @@
+{
+  "home": {
+    "title": "Ebbatech Nigeria | Industrial Storage, Racking & Shelving Solutions",
+    "description": "Ebbatech Nigeria Limited designs, manufactures and installs industrial racking, shelving and mobile storage systems. A one-stop shop for storage solutions in Lagos and across Nigeria.",
+    "shareImage": "/images/hero_warehouse.png"
+  },
+  "about": {
+    "title": "About Ebbatech | Leading Storage Systems Company in Nigeria",
+    "description": "Ebbatech Nigeria Limited is a leading provider of industrial storage and shelving, working with clients from planning through installation and on-going support.",
+    "shareImage": ""
+  },
+  "services": {
+    "title": "Storage Consulting, Analysis & Installation Services | Ebbatech",
+    "description": "Consulting, facility analysis and racking installation and relocation services from Ebbatech Nigeria Limited.",
+    "shareImage": ""
+  },
+  "products": {
+    "title": "Warehouse Racking, Shelving & Mobile Storage | Ebbatech Nigeria",
+    "description": "Pallet racking, long span shelving, mobile archive shelving, lockers, work benches and storage solutions engineered for your business.",
+    "shareImage": ""
+  },
+  "projects": {
+    "title": "Our Projects | Ebbatech Nigeria Limited",
+    "description": "A look at pallet racking, bulk storage and warehouse fit-out projects delivered by Ebbatech Nigeria Limited.",
+    "shareImage": ""
+  },
+  "clients": {
+    "title": "Our Clients | Ebbatech Nigeria Limited",
+    "description": "Ebbatech works with banks, government agencies, data centres, oil and gas firms and multinationals across Nigeria.",
+    "shareImage": ""
+  },
+  "contact": {
+    "title": "Contact Ebbatech Nigeria | Ikeja, Lagos",
+    "description": "Contact Ebbatech Nigeria Limited in Ikeja, Lagos for storage quotations, consulting and installation.",
+    "shareImage": ""
+  },
+  "privacy": {
+    "title": "Privacy Policy | Ebbatech Nigeria Limited",
+    "description": "How Ebbatech Nigeria Limited collects, uses, and protects data submitted through our enquiry form and consultation requests.",
+    "shareImage": ""
+  },
+  "terms": {
+    "title": "Terms of Service | Ebbatech Nigeria Limited",
+    "description": "Terms of service governing enquiries, quotations, and installation and relocation services provided by Ebbatech Nigeria Limited.",
+    "shareImage": ""
+  },
+  "cookies": {
+    "title": "Cookie Policy | Ebbatech Nigeria Limited",
+    "description": "How Ebbatech Nigeria Limited uses browser cookies and tracking tags to optimize B2B portal operations and remember preferences.",
+    "shareImage": ""
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "July 15, 2026",
+  "intro": "Ebbatech Nigeria Limited is committed to protecting your corporate and personal privacy. This Privacy Policy explains what data we collect through our Enquiry Form and other direct contact with our sales team, and how we handle it.",
+  "sections": [
+    {
+      "heading": "Information We Collect",
+      "body": "When you submit an enquiry, we collect your full name, company name, email address, phone number, enquiry type, facility location, and any project details you provide."
+    },
+    {
+      "heading": "Use of Data",
+      "body": "Your information is used exclusively to respond to your enquiry, prepare quotations, and coordinate consultations, installations or facility reviews. We do not sell or lease corporate information to third parties."
+    },
+    {
+      "heading": "Security Controls",
+      "body": "Ebbatech maintains technical and physical access controls to protect your site blueprints and corporate contact details."
+    }
+  ]
+}

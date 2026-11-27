@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import navigation from "@/content/navigation.json";
+import site from "@/content/site.json";
 
 export default function Footer() {
+  const { columns, legalLinks, copyright } = navigation.footer;
+
   return (
     <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -26,62 +30,60 @@ export default function Footer() {
           <div className="space-y-3 pt-2 text-xs font-light max-w-sm">
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-[#F27052] flex-shrink-0 mt-0.5" />
-              <span>22 Alhaja Kofoworola Crescent, Off Awolowo Way, Ikeja, Lagos.</span>
+              <span>{site.address.full}</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-[#F27052] flex-shrink-0" />
-              <span>(+234) 803 448 4931 · (+234) 905 559 7922</span>
+              <span>{site.phones.join(" · ")}</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#F27052] flex-shrink-0" />
-              <span>hello@ebbatech.com.ng · sales@ebbatech.com.ng</span>
+              <span>{site.emails.general} · {site.emails.sales}</span>
             </div>
             <div className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-[#F27052] flex-shrink-0" />
-              <span>www.ebbatech.com.ng</span>
+              <span>{site.website}</span>
             </div>
           </div>
         </div>
 
         {/* Company */}
         <div className="space-y-4 text-xs font-bold uppercase tracking-wider">
-          <h4 className="text-white text-sm font-extrabold normal-case tracking-normal">Company</h4>
+          <h4 className="text-white text-sm font-extrabold normal-case tracking-normal">{columns.company.title}</h4>
           <div className="flex flex-col gap-2.5">
-            <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
-            <Link href="/about#mission" className="hover:text-white transition-colors">Our Mission</Link>
-            <Link href="/projects" className="hover:text-white transition-colors">Our Projects</Link>
-            <Link href="/clients" className="hover:text-white transition-colors">Our Clients</Link>
+            {columns.company.links.map((link) => (
+              <Link key={link.href} href={link.href} className="hover:text-white transition-colors">{link.label}</Link>
+            ))}
           </div>
         </div>
 
         {/* Services & Products */}
         <div className="space-y-8">
           <div className="space-y-4 text-xs font-bold uppercase tracking-wider">
-            <h4 className="text-white text-sm font-extrabold normal-case tracking-normal">Services</h4>
+            <h4 className="text-white text-sm font-extrabold normal-case tracking-normal">{columns.services.title}</h4>
             <div className="flex flex-col gap-2.5">
-              <Link href="/services#consulting-service" className="hover:text-white transition-colors">Consulting</Link>
-              <Link href="/services#analysis-and-advice" className="hover:text-white transition-colors">Analysis & Advice</Link>
-              <Link href="/services#installation-and-relocation" className="hover:text-white transition-colors">Installation & Relocation</Link>
+              {columns.services.links.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-white transition-colors">{link.label}</Link>
+              ))}
             </div>
           </div>
           <div className="space-y-4 text-xs font-bold uppercase tracking-wider">
-            <h4 className="text-white text-sm font-extrabold normal-case tracking-normal">Products</h4>
+            <h4 className="text-white text-sm font-extrabold normal-case tracking-normal">{columns.products.title}</h4>
             <div className="flex flex-col gap-2.5">
-              <Link href="/products#warehouse-racking" className="hover:text-white transition-colors">Heavy Duty Racking</Link>
-              <Link href="/products#shelving-systems" className="hover:text-white transition-colors">Shelving Systems</Link>
-              <Link href="/products#storage-solutions" className="hover:text-white transition-colors">Storage Solutions</Link>
-              <Link href="/products#mobile-shelving" className="hover:text-white transition-colors">Mobile Shelving</Link>
+              {columns.products.links.map((link) => (
+                <Link key={link.href} href={link.href} className="hover:text-white transition-colors">{link.label}</Link>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 border-t border-slate-900 mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-slate-600">
-        <span>© {new Date().getFullYear()} Ebbatech Nigeria Limited. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} {copyright}</span>
         <div className="flex flex-wrap items-center gap-6">
-          <Link href="/privacy" className="hover:text-slate-450 transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-slate-450 transition-colors">Terms of Service</Link>
-          <Link href="/cookies" className="hover:text-slate-450 transition-colors">Cookie Policy</Link>
+          {legalLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="hover:text-slate-450 transition-colors">{link.label}</Link>
+          ))}
         </div>
       </div>
     </footer>

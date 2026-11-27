@@ -1,0 +1,2183 @@
+# Pages CMS configuration. Written in JSON syntax (valid YAML) because
+# scripts/validate-content.mjs reads the same field rules. Keep it that way.
+{
+  "media": [
+    {
+      "name": "photos",
+      "label": "Photos",
+      "input": "public/photos",
+      "output": "/photos",
+      "rename": "safe",
+      "extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "JPG",
+        "JPEG",
+        "PNG",
+        "WEBP"
+      ]
+    },
+    {
+      "name": "banners",
+      "label": "Product and banner images",
+      "input": "public/images",
+      "output": "/images",
+      "rename": "safe",
+      "extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "JPG",
+        "JPEG",
+        "PNG",
+        "WEBP"
+      ]
+    },
+    {
+      "name": "logos",
+      "label": "Client logos",
+      "input": "public/images/clients/logos",
+      "output": "/images/clients/logos",
+      "rename": "safe",
+      "extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp",
+        "JPG",
+        "JPEG",
+        "PNG",
+        "WEBP"
+      ]
+    }
+  ],
+  "content": [
+    {
+      "name": "home",
+      "label": "Homepage",
+      "type": "file",
+      "format": "json",
+      "path": "content/home.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "fields": [
+        {
+          "name": "heroSlides",
+          "label": "Hero slides",
+          "type": "object",
+          "fields": [
+            {
+              "name": "image",
+              "label": "Background image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "required": true
+            },
+            {
+              "name": "badge",
+              "label": "Small label",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "heading",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "headingHighlight",
+              "label": "Highlighted second line",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "ctaLabel",
+              "label": "Button text",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "ctaHref",
+              "label": "Button link",
+              "type": "string",
+              "pattern": {
+                "regex": "^/.*",
+                "message": "Start with /, for example /contact"
+              },
+              "required": true,
+              "description": "A page on this website, for example /contact"
+            },
+            {
+              "name": "secondaryCtaLabel",
+              "label": "Second button text",
+              "type": "string"
+            },
+            {
+              "name": "secondaryCtaHref",
+              "label": "Second button link",
+              "type": "string",
+              "pattern": {
+                "regex": "^(/.*)?$",
+                "message": "Start with /, for example /products"
+              },
+              "description": "Optional. A page on this website."
+            }
+          ],
+          "list": {
+            "min": 1,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{badge}"
+            }
+          }
+        },
+        {
+          "name": "valueProps",
+          "label": "Highlights",
+          "type": "object",
+          "fields": [
+            {
+              "name": "icon",
+              "label": "Icon",
+              "type": "select",
+              "required": true,
+              "options": {
+                "values": [
+                  "Building2",
+                  "Compass",
+                  "Factory",
+                  "Globe2",
+                  "Layers",
+                  "TrendingUp"
+                ]
+              }
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            }
+          ],
+          "list": {
+            "min": 1,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{title}"
+            }
+          }
+        },
+        {
+          "name": "welcome",
+          "label": "Who we are",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "paragraphs",
+              "label": "Paragraphs",
+              "type": "text",
+              "list": {
+                "min": 1,
+                "collapsible": false
+              }
+            },
+            {
+              "name": "linkLabel",
+              "label": "Link text",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "image",
+              "label": "Image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "solutions",
+          "label": "Our solutions",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "cardLinkLabel",
+              "label": "Card link text",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "allLinkLabel",
+              "label": "View all link text",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "servicesPreview",
+          "label": "How we work",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "linkLabel",
+              "label": "Link text",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "clientsBand",
+          "label": "Client logos strip",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "text",
+              "label": "Text",
+              "type": "text",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "cta",
+          "label": "Closing banner",
+          "type": "object",
+          "fields": [
+            {
+              "name": "eyebrow",
+              "label": "Small heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "subtitle",
+              "label": "Subtitle",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "image",
+              "label": "Background photo",
+              "type": "image",
+              "options": {
+                "media": "photos"
+              },
+              "required": true
+            },
+            {
+              "name": "buttonLabel",
+              "label": "Button text",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "buttonHref",
+              "label": "Button link",
+              "type": "string",
+              "pattern": {
+                "regex": "^/.*",
+                "message": "Start with /, for example /contact"
+              },
+              "required": true,
+              "description": "A page on this website, for example /contact"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "label": "Products",
+      "type": "file",
+      "format": "json",
+      "path": "content/products.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "list": {
+        "min": 1,
+        "collapsible": {
+          "collapsed": true,
+          "summary": "{name}"
+        }
+      },
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "id",
+          "label": "ID",
+          "type": "string",
+          "pattern": {
+            "regex": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "message": "Use lower-case letters, numbers and single hyphens only."
+          },
+          "required": true,
+          "description": "Set once for a new item. Do not change existing values."
+        },
+        {
+          "name": "slug",
+          "label": "Web address name",
+          "type": "string",
+          "pattern": {
+            "regex": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "message": "Use lower-case letters, numbers and single hyphens only."
+          },
+          "required": true,
+          "description": "Used in links. Do not change existing values."
+        },
+        {
+          "name": "previewDescription",
+          "label": "Short description",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "label": "Full description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "items",
+          "label": "Product list",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "bestFor",
+          "label": "Best for",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "image",
+          "label": "Image",
+          "type": "image",
+          "options": {
+            "media": "banners"
+          },
+          "required": true
+        },
+        {
+          "name": "ctaLabel",
+          "label": "Button text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "enquiryType",
+          "label": "Enquiry type selected by the button",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              "Consulting",
+              "Racking",
+              "Shelving",
+              "Storage Solutions",
+              "Mobile Shelving",
+              "Installation & Relocation",
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "label": "Services",
+      "type": "file",
+      "format": "json",
+      "path": "content/services.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "list": {
+        "min": 1,
+        "collapsible": {
+          "collapsed": true,
+          "summary": "{name}"
+        }
+      },
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "id",
+          "label": "ID",
+          "type": "string",
+          "pattern": {
+            "regex": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "message": "Use lower-case letters, numbers and single hyphens only."
+          },
+          "required": true,
+          "description": "Set once for a new item. Do not change existing values."
+        },
+        {
+          "name": "slug",
+          "label": "Web address name",
+          "type": "string",
+          "pattern": {
+            "regex": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "message": "Use lower-case letters, numbers and single hyphens only."
+          },
+          "required": true,
+          "description": "Used in links. Do not change existing values."
+        },
+        {
+          "name": "body",
+          "label": "Paragraphs",
+          "type": "text",
+          "list": {
+            "min": 1,
+            "collapsible": false
+          }
+        },
+        {
+          "name": "bullets",
+          "label": "Bullet points",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "images",
+          "label": "Photos",
+          "type": "image",
+          "options": {
+            "media": "photos"
+          },
+          "list": {
+            "min": 1,
+            "collapsible": false
+          }
+        },
+        {
+          "name": "ctaLabel",
+          "label": "Button text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "enquiryType",
+          "label": "Enquiry type selected by the button",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              "Consulting",
+              "Racking",
+              "Shelving",
+              "Storage Solutions",
+              "Mobile Shelving",
+              "Installation & Relocation",
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "label": "Projects",
+      "type": "file",
+      "format": "json",
+      "path": "content/projects.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "list": {
+        "min": 1,
+        "collapsible": {
+          "collapsed": true,
+          "summary": "{title}"
+        }
+      },
+      "fields": [
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "id",
+          "label": "ID",
+          "type": "string",
+          "pattern": {
+            "regex": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "message": "Use lower-case letters, numbers and single hyphens only."
+          },
+          "required": true,
+          "description": "Set once for a new item. Do not change existing values."
+        },
+        {
+          "name": "slug",
+          "label": "Web address name",
+          "type": "string",
+          "pattern": {
+            "regex": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "message": "Use lower-case letters, numbers and single hyphens only."
+          },
+          "required": true,
+          "description": "Used in links. Do not change existing values."
+        },
+        {
+          "name": "category",
+          "label": "Category",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "image",
+          "label": "Photo",
+          "type": "image",
+          "options": {
+            "media": "photos"
+          },
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "clients",
+      "label": "Clients and logos",
+      "type": "file",
+      "format": "json",
+      "path": "content/clients.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "list": {
+        "min": 1,
+        "collapsible": {
+          "collapsed": true,
+          "summary": "{name}"
+        }
+      },
+      "fields": [
+        {
+          "name": "name",
+          "label": "Client name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "label": "Logo",
+          "type": "image",
+          "options": {
+            "media": "logos"
+          },
+          "description": "Optional. The name is shown when there is no logo."
+        }
+      ]
+    },
+    {
+      "name": "sectors",
+      "label": "Sectors",
+      "type": "file",
+      "format": "json",
+      "path": "content/sectors.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "list": {
+        "min": 1,
+        "collapsible": {
+          "collapsed": true,
+          "summary": "{name}"
+        }
+      },
+      "fields": [
+        {
+          "name": "name",
+          "label": "Sector",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "website-pages",
+      "label": "Website pages",
+      "type": "group",
+      "items": [
+        {
+          "name": "page-about",
+          "label": "About",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/about.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "header",
+              "label": "Page heading",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "story",
+              "label": "Our story",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "paragraphs",
+                  "label": "Paragraphs",
+                  "type": "text",
+                  "list": {
+                    "min": 1,
+                    "collapsible": false
+                  }
+                },
+                {
+                  "name": "image",
+                  "label": "Photo",
+                  "type": "image",
+                  "options": {
+                    "media": "photos"
+                  },
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "mission",
+              "label": "Our mission",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "quote",
+                  "label": "Mission statement",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "differentiators",
+              "label": "What sets us apart",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "items",
+                  "label": "Cards",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "icon",
+                      "label": "Icon",
+                      "type": "select",
+                      "required": true,
+                      "options": {
+                        "values": [
+                          "Building2",
+                          "Compass",
+                          "Factory",
+                          "Globe2",
+                          "Layers",
+                          "TrendingUp"
+                        ]
+                      }
+                    },
+                    {
+                      "name": "title",
+                      "label": "Title",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "description",
+                      "label": "Description",
+                      "type": "text",
+                      "required": true
+                    }
+                  ],
+                  "list": {
+                    "min": 1,
+                    "collapsible": {
+                      "collapsed": true,
+                      "summary": "{title}"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "cta",
+              "label": "Closing banner",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                },
+                {
+                  "name": "image",
+                  "label": "Background photo",
+                  "type": "image",
+                  "options": {
+                    "media": "photos"
+                  },
+                  "required": true
+                },
+                {
+                  "name": "buttonLabel",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "buttonHref",
+                  "label": "Button link",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^/.*",
+                    "message": "Start with /, for example /contact"
+                  },
+                  "required": true,
+                  "description": "A page on this website, for example /contact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "page-services",
+          "label": "Services page",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/services.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "header",
+              "label": "Page heading",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "bulletsHeading",
+              "label": "Bullet list heading",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "page-products",
+          "label": "Products page",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/products.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "header",
+              "label": "Page heading",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "bestForLabel",
+              "label": "Best for label",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "cardFootnote",
+              "label": "Card footnote",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "page-projects",
+          "label": "Projects page",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/projects.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "header",
+              "label": "Page heading",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "cta",
+              "label": "Closing banner",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                },
+                {
+                  "name": "image",
+                  "label": "Background photo",
+                  "type": "image",
+                  "options": {
+                    "media": "photos"
+                  },
+                  "required": true
+                },
+                {
+                  "name": "buttonLabel",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "buttonHref",
+                  "label": "Button link",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^/.*",
+                    "message": "Start with /, for example /contact"
+                  },
+                  "required": true,
+                  "description": "A page on this website, for example /contact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "page-clients",
+          "label": "Clients page",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/clients.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "header",
+              "label": "Page heading",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text",
+              "list": {
+                "min": 1,
+                "collapsible": false
+              }
+            },
+            {
+              "name": "sectorsHeading",
+              "label": "Sectors heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "cta",
+              "label": "Closing banner",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                },
+                {
+                  "name": "image",
+                  "label": "Background photo",
+                  "type": "image",
+                  "options": {
+                    "media": "photos"
+                  },
+                  "required": true
+                },
+                {
+                  "name": "buttonLabel",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "buttonHref",
+                  "label": "Button link",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^/.*",
+                    "message": "Start with /, for example /contact"
+                  },
+                  "required": true,
+                  "description": "A page on this website, for example /contact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "page-contact",
+          "label": "Contact page",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/contact.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "header",
+              "label": "Page heading",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "eyebrow",
+                  "label": "Small heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "subtitle",
+                  "label": "Subtitle",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "details",
+              "label": "Contact details headings",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "addressLabel",
+                  "label": "Address label",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "emailLabel",
+                  "label": "Email label",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "generalEmailLabel",
+                  "label": "General email label",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "salesEmailLabel",
+                  "label": "Sales email label",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "phoneLabel",
+                  "label": "Phone label",
+                  "type": "string",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "name": "form",
+              "label": "Enquiry form",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "title",
+                  "label": "Title",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "intro",
+                  "label": "Introduction",
+                  "type": "text",
+                  "required": true
+                },
+                {
+                  "name": "submitLabel",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "successMessage",
+                  "label": "Message after sending",
+                  "type": "text",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "page-privacy",
+          "label": "Privacy Policy",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/privacy.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lastUpdated",
+              "label": "Last updated",
+              "type": "string",
+              "required": true,
+              "description": "For example: July 15, 2026"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "sections",
+              "label": "Sections",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "body",
+                  "label": "Text",
+                  "type": "text",
+                  "required": true
+                }
+              ],
+              "list": {
+                "min": 1,
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{heading}"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "page-terms",
+          "label": "Terms of Service",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/terms.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lastUpdated",
+              "label": "Last updated",
+              "type": "string",
+              "required": true,
+              "description": "For example: July 15, 2026"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "sections",
+              "label": "Sections",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "body",
+                  "label": "Text",
+                  "type": "text",
+                  "required": true
+                }
+              ],
+              "list": {
+                "min": 1,
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{heading}"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "page-cookies",
+          "label": "Cookie Policy",
+          "type": "file",
+          "format": "json",
+          "path": "content/pages/cookies.json",
+          "operations": {
+            "create": false,
+            "delete": false
+          },
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lastUpdated",
+              "label": "Last updated",
+              "type": "string",
+              "required": true,
+              "description": "For example: July 15, 2026"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "sections",
+              "label": "Sections",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "heading",
+                  "label": "Heading",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "body",
+                  "label": "Text",
+                  "type": "text",
+                  "required": true
+                }
+              ],
+              "list": {
+                "min": 1,
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{heading}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "contact-information",
+      "label": "Contact information",
+      "type": "file",
+      "format": "json",
+      "path": "content/site.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "fields": [
+        {
+          "name": "companyName",
+          "label": "Company name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "website",
+          "label": "Website",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "emails",
+          "label": "Email addresses",
+          "type": "object",
+          "fields": [
+            {
+              "name": "general",
+              "label": "General",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "sales",
+              "label": "Sales",
+              "type": "string",
+              "required": true,
+              "description": "Enquiries from the form go to this address."
+            }
+          ]
+        },
+        {
+          "name": "phones",
+          "label": "Phone numbers",
+          "type": "string",
+          "list": {
+            "min": 1,
+            "collapsible": false
+          },
+          "description": "The first number appears in the top bar."
+        },
+        {
+          "name": "address",
+          "label": "Address (update all three)",
+          "type": "object",
+          "fields": [
+            {
+              "name": "short",
+              "label": "Top bar",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "full",
+              "label": "Footer",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "lines",
+              "label": "Contact page lines",
+              "type": "string",
+              "list": {
+                "min": 1,
+                "collapsible": false
+              }
+            }
+          ]
+        },
+        {
+          "name": "whatsapp",
+          "label": "WhatsApp button",
+          "type": "object",
+          "fields": [
+            {
+              "name": "number",
+              "label": "Number",
+              "type": "string",
+              "pattern": {
+                "regex": "^[0-9]{8,15}$",
+                "message": "Digits only, with country code and no + sign."
+              },
+              "required": true,
+              "description": "For example 2348034484931"
+            },
+            {
+              "name": "message",
+              "label": "Pre-filled message",
+              "type": "text",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "cookieBanner",
+          "label": "Cookie banner",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "text",
+              "label": "Text before the policy link",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "policyLinkLabel",
+              "label": "Policy link text",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "acceptLabel",
+              "label": "Accept button",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "declineLabel",
+              "label": "Decline button",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "navigation",
+      "label": "Menu and footer",
+      "type": "file",
+      "format": "json",
+      "path": "content/navigation.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "fields": [
+        {
+          "name": "header",
+          "label": "Top menu",
+          "type": "object",
+          "fields": [
+            {
+              "name": "links",
+              "label": "Menu links",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "href",
+                  "label": "Link",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^/.*",
+                    "message": "Start with /, for example /contact"
+                  },
+                  "required": true,
+                  "description": "A page on this website, for example /contact"
+                }
+              ],
+              "list": {
+                "min": 1,
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{label}"
+                }
+              },
+              "description": "Keep the /products link: it opens the products menu."
+            },
+            {
+              "name": "allProductsLabel",
+              "label": "Mobile view all products text",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "cta",
+              "label": "Menu button",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "href",
+                  "label": "Link",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^/.*",
+                    "message": "Start with /, for example /contact"
+                  },
+                  "required": true,
+                  "description": "A page on this website, for example /contact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "footer",
+          "label": "Footer",
+          "type": "object",
+          "fields": [
+            {
+              "name": "columns",
+              "label": "Columns",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "company",
+                  "label": "Company column",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "title",
+                      "label": "Title",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "links",
+                      "label": "Links",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "label",
+                          "label": "Text",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "href",
+                          "label": "Link",
+                          "type": "string",
+                          "pattern": {
+                            "regex": "^/.*",
+                            "message": "Start with /, for example /contact"
+                          },
+                          "required": true,
+                          "description": "A page on this website, for example /contact"
+                        }
+                      ],
+                      "list": {
+                        "min": 1,
+                        "collapsible": {
+                          "collapsed": true,
+                          "summary": "{label}"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "services",
+                  "label": "Services column",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "title",
+                      "label": "Title",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "links",
+                      "label": "Links",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "label",
+                          "label": "Text",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "href",
+                          "label": "Link",
+                          "type": "string",
+                          "pattern": {
+                            "regex": "^/.*",
+                            "message": "Start with /, for example /contact"
+                          },
+                          "required": true,
+                          "description": "A page on this website, for example /contact"
+                        }
+                      ],
+                      "list": {
+                        "min": 1,
+                        "collapsible": {
+                          "collapsed": true,
+                          "summary": "{label}"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "products",
+                  "label": "Products column",
+                  "type": "object",
+                  "fields": [
+                    {
+                      "name": "title",
+                      "label": "Title",
+                      "type": "string",
+                      "required": true
+                    },
+                    {
+                      "name": "links",
+                      "label": "Links",
+                      "type": "object",
+                      "fields": [
+                        {
+                          "name": "label",
+                          "label": "Text",
+                          "type": "string",
+                          "required": true
+                        },
+                        {
+                          "name": "href",
+                          "label": "Link",
+                          "type": "string",
+                          "pattern": {
+                            "regex": "^/.*",
+                            "message": "Start with /, for example /contact"
+                          },
+                          "required": true,
+                          "description": "A page on this website, for example /contact"
+                        }
+                      ],
+                      "list": {
+                        "min": 1,
+                        "collapsible": {
+                          "collapsed": true,
+                          "summary": "{label}"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "legalLinks",
+              "label": "Legal links",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "label": "Text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "href",
+                  "label": "Link",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^/.*",
+                    "message": "Start with /, for example /contact"
+                  },
+                  "required": true,
+                  "description": "A page on this website, for example /contact"
+                }
+              ],
+              "list": {
+                "min": 1,
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{label}"
+                }
+              }
+            },
+            {
+              "name": "copyright",
+              "label": "Copyright line",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "seo",
+      "label": "SEO settings",
+      "type": "file",
+      "format": "json",
+      "path": "content/seo.json",
+      "operations": {
+        "create": false,
+        "delete": false
+      },
+      "fields": [
+        {
+          "name": "home",
+          "label": "Home page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "about",
+          "label": "About page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "services",
+          "label": "Services page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "products",
+          "label": "Products page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "projects",
+          "label": "Projects page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "clients",
+          "label": "Clients page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "contact",
+          "label": "Contact page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "privacy",
+          "label": "Privacy page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "terms",
+          "label": "Terms page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        },
+        {
+          "name": "cookies",
+          "label": "Cookies page",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Page title",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "shareImage",
+              "label": "Social sharing image",
+              "type": "image",
+              "options": {
+                "media": "banners"
+              },
+              "description": "Optional. Pages without one use the homepage image."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "content": {
+      "merge": true
+    },
+    "commit": {
+      "identity": "app"
+    }
+  }
+}
