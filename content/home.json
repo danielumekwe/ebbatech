@@ -15,45 +15,33 @@
       "image": "/images/pallet_racking.png",
       "badge": "Heavy Duty Warehouse Racking",
       "heading": "Heavy Duty Warehouse Racking",
-      "headingHighlight": "",
       "description": "Racking systems built to carry serious load and keep high-volume operations moving.",
       "ctaLabel": "Enquire about racking",
-      "ctaHref": "/contact?type=Racking",
-      "secondaryCtaLabel": "",
-      "secondaryCtaHref": ""
+      "ctaHref": "/contact?type=Racking"
     },
     {
       "image": "/images/shelving_system.png",
       "badge": "Shelving System",
       "heading": "Shelving System",
-      "headingHighlight": "",
       "description": "A complete shelving range for warehouses, offices, retail floors, libraries and archives.",
       "ctaLabel": "Enquire about shelving",
-      "ctaHref": "/contact?type=Shelving",
-      "secondaryCtaLabel": "",
-      "secondaryCtaHref": ""
+      "ctaHref": "/contact?type=Shelving"
     },
     {
       "image": "/images/hero_warehouse.png",
       "badge": "Storage Solutions",
       "heading": "Storage Solutions",
-      "headingHighlight": "",
       "description": "Regardless of the industry you operate in, Ebbatech's range of unique storage solutions are engineered around you — ensuring you're doing things as efficiently as possible now, yet remain flexible enough to adapt as your business changes.",
       "ctaLabel": "Discuss your requirements",
-      "ctaHref": "/contact?type=Storage%20Solutions",
-      "secondaryCtaLabel": "",
-      "secondaryCtaHref": ""
+      "ctaHref": "/contact?type=Storage%20Solutions"
     },
     {
       "image": "/images/mobile_shelving.png",
       "badge": "Mobile Shelving",
       "heading": "Mobile Shelving",
-      "headingHighlight": "",
       "description": "Mobile shelving systems have become one of the most essential high-density storage systems, especially where there isn't a lot of available floor space. This system could not only save you money, it can also free up floor space for either more storage capacity or personnel space. As your business grows, the mobile system can grow with you, making your office environment more productive without taking on more expensive floor space. Our clients here in Nigeria include banks, government agencies, data centres, oil and gas companies, multinational companies, records and archiving operations and more. For these clients the storage of files and products needs to be maximised in the given area — this is where a mobile storage system will work.",
       "ctaLabel": "See if mobile shelving fits your space",
-      "ctaHref": "/contact?type=Mobile%20Shelving",
-      "secondaryCtaLabel": "",
-      "secondaryCtaHref": ""
+      "ctaHref": "/contact?type=Mobile%20Shelving"
     }
   ],
   "valueProps": [
@@ -97,7 +85,7 @@
     "linkLabel": "See how we work"
   },
   "clientsBand": {
-    "eyebrow": "Trusted Across Nigeria",
+    "eyebrow": "Trusted heavy Duty Racking Solutions in Nigeria",
     "text": "Every year we help scores of companies become more efficient and more productive."
   },
   "cta": {
