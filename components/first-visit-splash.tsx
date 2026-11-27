@@ -12,14 +12,16 @@ export default function FirstVisitSplash() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    let raf = 0;
+
+    // Returning visitors: CSS already hides the splash, so unmount on the next frame.
     if (sessionStorage.getItem(STORAGE_KEY)) {
-      setDone(true);
-      return;
+      raf = requestAnimationFrame(() => setDone(true));
+      return () => cancelAnimationFrame(raf);
     }
 
     document.body.style.overflow = "hidden";
 
-    let raf = 0;
     const start = performance.now();
 
     const tick = (now: number) => {

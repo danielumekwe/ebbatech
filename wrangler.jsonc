@@ -1,0 +1,13 @@
+{
+  // Static export of the Next.js site, served by Cloudflare Workers static assets.
+  // No Worker script and no custom domain or routes are configured here.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ebbatech",
+  "compatibility_date": "2026-11-23",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}

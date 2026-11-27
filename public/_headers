@@ -1,0 +1,16 @@
+# Used by Cloudflare only. Vercel takes its headers from next.config.ts.
+
+# Security headers: keep in sync with next.config.ts.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Build files have unique names, so browsers can cache them permanently.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Keep temporary workers.dev addresses out of search results. Custom domains are not affected.
+https://:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex, nofollow

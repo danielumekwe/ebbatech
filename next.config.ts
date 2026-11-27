@@ -7,8 +7,16 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
 ];
 
-const nextConfig: NextConfig = {
-  poweredByHeader: false,
+// Set by `npm run build:cloudflare`. All other builds, including Vercel, are unaffected.
+const isCloudflare = process.env.DEPLOY_TARGET === "cloudflare";
+
+// A static export has no server, so Next.js headers and image optimisation are unavailable.
+const cloudflareConfig: NextConfig = {
+  output: "export",
+  images: { unoptimized: true },
+};
+
+const serverConfig: NextConfig = {
   async headers() {
     return [
       {
@@ -17,6 +25,11 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+};
+
+const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  ...(isCloudflare ? cloudflareConfig : serverConfig),
 };
 
 export default nextConfig;
