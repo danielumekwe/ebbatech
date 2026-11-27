@@ -10,34 +10,42 @@
   },
   "services": {
     "title": "Storage Consulting, Analysis & Installation Services | Ebbatech",
-    "description": "Consulting, facility analysis and racking installation and relocation services from Ebbatech Nigeria Limited."
+    "description": "Consulting, facility analysis and racking installation and relocation services from Ebbatech Nigeria Limited.",
+    "shareImage": "/images/ebbatech-warehouse-racking-solutions.png"
   },
   "products": {
     "title": "Warehouse Racking, Shelving & Mobile Storage | Ebbatech Nigeria",
-    "description": "Pallet racking, long span shelving, mobile archive shelving, lockers, work benches and storage solutions engineered for your business."
+    "description": "Pallet racking, long span shelving, mobile archive shelving, lockers, work benches and storage solutions engineered for your business.",
+    "shareImage": "/images/whatsapp-image-2026-11-20-at-2317156.jpeg"
   },
   "projects": {
     "title": "Our Projects | Ebbatech Nigeria Limited",
-    "description": "A look at pallet racking, bulk storage and warehouse fit-out projects delivered by Ebbatech Nigeria Limited."
+    "description": "A look at pallet racking, bulk storage and warehouse fit-out projects delivered by Ebbatech Nigeria Limited.",
+    "shareImage": "/images/wire-mesh-heavyduty.jpg"
   },
   "clients": {
     "title": "Our Clients | Ebbatech Nigeria Limited",
-    "description": "Ebbatech works with banks, government agencies, data centres, oil and gas firms and multinationals across Nigeria."
+    "description": "Ebbatech works with banks, government agencies, data centres, oil and gas firms and multinationals across Nigeria.",
+    "shareImage": "/images/confident-warehouse-storage-solutions-portrait.png"
   },
   "contact": {
     "title": "Contact Ebbatech Nigeria | Ikeja, Lagos",
-    "description": "Contact Ebbatech Nigeria Limited in Ikeja, Lagos for storage quotations, consulting and installation."
+    "description": "Contact Ebbatech Nigeria Limited in Ikeja, Lagos for storage quotations, consulting and installation.",
+    "shareImage": "/images/ebbatech-single-sided-gondola-shelving.png"
   },
   "privacy": {
     "title": "Privacy Policy | Ebbatech Nigeria Limited",
-    "description": "How Ebbatech Nigeria Limited collects, uses, and protects data submitted through our enquiry form and consultation requests."
+    "description": "How Ebbatech Nigeria Limited collects, uses, and protects data submitted through our enquiry form and consultation requests.",
+    "shareImage": "/images/ebbatech-logo.jpg"
   },
   "terms": {
     "title": "Terms of Service | Ebbatech Nigeria Limited",
-    "description": "Terms of service governing enquiries, quotations, and installation and relocation services provided by Ebbatech Nigeria Limited."
+    "description": "Terms of service governing enquiries, quotations, and installation and relocation services provided by Ebbatech Nigeria Limited.",
+    "shareImage": "/images/black-supermarket-shelve.jpg"
   },
   "cookies": {
     "title": "Cookie Policy | Ebbatech Nigeria Limited",
-    "description": "How Ebbatech Nigeria Limited uses browser cookies and tracking tags to optimize B2B portal operations and remember preferences."
+    "description": "How Ebbatech Nigeria Limited uses browser cookies and tracking tags to optimize B2B portal operations and remember preferences.",
+    "shareImage": "/images/6units-metallic-shelves.jpg"
   }
 }
